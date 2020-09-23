@@ -1,9 +1,11 @@
 <template>
     <div class="sticky-top">
+      <img src="@/assets/img/rounded-top.png" alt="" style="position: absolute; left: 0%;">
     <b-navbar id="Navgeneral" class="py-3" toggleable="lg" >
         <b-container>
             <b-navbar-brand href="#" @click="$router.push({name:'Home'})">
-                <img src="@/assets/img/logo.png" alt="Kitten" width="105" height="30">
+                <img src="@/assets/img/logo.png" alt="Kitten" width="52" height="52">
+                AdaPundi
             </b-navbar-brand>
 
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -12,11 +14,14 @@
 
                 <!-- Right aligned nav items -->
                 <b-navbar-nav class="ml-auto">
-                    <b-nav-item href="#" @click="$router.push({name:'Home'})">Home</b-nav-item>
-                    <b-nav-item href="#" @click="$router.push({name:'contact'})">Contact us</b-nav-item>
-                    <b-nav-item href="#">Careers</b-nav-item>
-                    <b-nav-item href="#" @click="$router.push({name:'About'})">About Us</b-nav-item>
-                    <b-nav-item href="#"><b-button variant="primary">Get Free Access</b-button></b-nav-item>
+                    <b-nav-item href="#" @click="$router.push({name:'contact'})">Pinjaman</b-nav-item>
+                    <b-nav-item href="#">Investasi</b-nav-item>
+                    <b-nav-item href="#" @click="$router.push({name:'About'})">Tentang Kami</b-nav-item>
+                    <b-nav-item href="#">Investasi</b-nav-item>
+                    <b-nav-item href="#">Blog</b-nav-item>
+                    <b-nav-item href="#">Layanan Pengaduan</b-nav-item>
+                    <b-nav-item href="#">FAQ</b-nav-item>
+                    <b-nav-item href="#"><b-button variant="outline-warning">TKB90=98.82%</b-button></b-nav-item>
                 </b-navbar-nav>
             </b-collapse>
         </b-container>
@@ -24,5 +29,33 @@
 </div>
 </template>
 
+<style>
+@media (min-width: 1200px) {
+  #Navgeneral .container {
+    max-width: 1270px !important;
+  }
+}
+
+.nav-item {
+    display: flex;
+}
+ .nav-item a {
+        align-self: center;
+        padding-right: 1.2rem !important;
+        padding-left: 1.2rem !important;
+        font-family: MontSerrat-Regular;
+        color: black !important;
+        font-size: 12px;
+    }
+    .nav-item a button {
+      font-size: 12px;
+      font-family: MontSerrat-Regular;
+    }
+  a.navbar-brand {
+    font-family: MontSerrat-SemiBold;
+    font-size: 18px;
+    padding-left: 80px;
+  }
+</style>
 
 

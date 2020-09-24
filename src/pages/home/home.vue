@@ -71,7 +71,7 @@
             </transition>
           </div>
         </b-col>
-        <b-col md="5 pl-0 mt-5 pt-4">
+        <b-col md="5 pl-0 mt-4 pt-4">
           <div class="row cursor-pointer" @click="moveStepActive(1)">
             <div class="col-md-2">
               <button type="button" class="px-3 py-2 rounded-circle" :class="{'btn btn-success': stepActive == 1, 'btn btn-outline-secondary': stepActive < 1, 'btn btn-outline-success': stepActive > 1}">1</button>
@@ -203,6 +203,27 @@
       </b-row>
     </b-container>
   </b-jumbotron>
+
+  <div class="story">
+    <h3 class="text-center py-5 f-green">Cerita tentang AdaPundi</h3>
+    <b-container class="v2">
+      <div id="story-slide">
+        <carousel-3d :controls-visible="true" :controls-prev-html="'&#10092;'" :controls-next-html="'&#10093;'" :space="350"
+                    :controls-width="30" :controls-height="30" :clickable="true" :border="0" :width="463" :height="266">
+          <slide v-for="(slide, i) in slides" :index="i" v-bind:key="i">
+            <figure>
+              <img v-bind:src="slide.img">
+            </figure>
+          </slide>
+        </carousel-3d>
+      </div>
+
+      <div class="mt-5">
+        <p class="text-center title f-semiBlack">AdaPundi | Solusi Keuangan Anda</p>
+        <p class="text-center content f-gray">AdaPundi adalah salah satu platform kredit tanpa jaminan di Indonesia, misi kami adalah untuk menyediakan<br> pinjaman yang aman dan nyaman bagi pengguna. AdaPundi mengikuti konsep "kredit membuat hidup lebih baik"<br> dan mendukung inovasi keuangan yang didukung oleh oleh perkembangan teknologi.</p>
+      </div>
+    </b-container>
+  </div>
 
 </div>
 </template>

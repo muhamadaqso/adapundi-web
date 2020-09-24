@@ -108,7 +108,9 @@ h6 {
 .fade-leave-to{
   opacity: 0
 }
-
+#homePage .statt {
+  margin-top: 6rem;
+}
 #homePage .statt .v2.container {
   margin-top: 8rem;
 }
@@ -126,4 +128,23 @@ h6 {
   color: #757A91;
   font-family: MontSerrat-Regular;
   font-size: 14px;
+}
+
+#homePage .story #story-slide .carousel-3d-container .prev span, #homePage .story #story-slide .carousel-3d-container .next span {
+  font-size: 26px;
+    background: white;
+    color: #10B382;
+    padding: 1px 14px;
+    border-radius: 3rem;
+}
+
+#homePage .story .mt-5 p.title {
+  font-family: MontSerrat-Regular;
+  font-size: 18px;
+}
+
+#homePage .story .mt-5 p.content {
+  font-family: MontSerrat-Light;
+  font-size: 14px;
+  line-height: 22px;
 }

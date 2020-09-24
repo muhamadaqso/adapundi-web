@@ -1,3 +1,4 @@
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -9,6 +10,9 @@
 }
 .f-gray {
   color: #9DA2B9;
+}
+.f-white {
+  color: white;
 }
 h2 {
   font-family: MontSerrat-SemiBold;
@@ -147,4 +151,9 @@ h6 {
   font-family: MontSerrat-Light;
   font-size: 14px;
   line-height: 22px;
+}
+
+#homePage .activity{
+  margin-top: 7rem;
+  background: linear-gradient(180deg, rgb(38 226 81) 0%, rgb(40 156 67 / 79%) 23%, rgba(16,179,130,1) 100%);
 }

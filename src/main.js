@@ -12,7 +12,6 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 Vue.config.productionTip = false
 
 window.$ = require('jquery');
-
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 

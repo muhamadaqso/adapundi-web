@@ -225,6 +225,42 @@
     </b-container>
   </div>
 
+  <div class="activity">
+    <h3 class="text-center py-5 f-white">Aktifitas Offline AdaPundi</h3>
+    <b-container class=" mt-4">
+      <b-row>
+        <b-col md="3">
+          <img src="@/assets/img/img1.png" alt="">
+        </b-col>
+        <b-col md="9">
+          <b-row>
+            <b-col md="4">
+              <img src="@/assets/img/img3.png" alt="">
+            </b-col>
+            <b-col md="4">
+              <img src="@/assets/img/img4.png" alt="">
+            </b-col>
+            <b-col md="4">
+              <img src="@/assets/img/img3.png" alt="">
+            </b-col>
+          </b-row>
+          <b-row class="mt-3">
+            <b-col md="4">
+              <img src="@/assets/img/img4.png" alt="">
+            </b-col>
+            <b-col md="8">
+              <img src="@/assets/img/img2.png" alt="">
+            </b-col>
+          </b-row>
+        </b-col>
+      </b-row>
+
+      <div class="mt-5 w-25 d-flex mx-auto">
+        <b-button block variant="outline-light text-center">Lihat Lebih Banyak</b-button>
+      </div>
+    </b-container>
+  </div>
+
 </div>
 </template>
 <script src="./home.js">

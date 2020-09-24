@@ -1,1 +1,129 @@
+.cursor-pointer {
+  cursor: pointer;
+}
+.f-green {
+  color: #10B382;
+}
+.f-semiBlack {
+  color: #4E5263;
+}
+.f-gray {
+  color: #9DA2B9;
+}
+h2 {
+  font-family: MontSerrat-SemiBold;
+}
+h3 {
+  font-family: MontSerrat-Regular;
+}
+h6 {
+  font-family: MontSerrat-SemiBold;
+}
+.vl-green {
+  border-left: 2px solid #10B382;
+  margin-left: 18px;
+  height: 100px;
+}
+.vl-gray {
+  border-left: 2px solid #C8CCDF;
+  margin-left: 18px;
+  height: 100px;
+}
+@media (min-width: 1200px) {
+  .container.v2 {
+    max-width: 1270px !important;
+  }
+}
+.btn.btn-warning {
+  background: linear-gradient(180deg, rgba(255,158,44,1) 0%, rgba(255,158,44,1) 30%, rgba(255,114,39,1) 100%) !important;
+  border : none;
+  color: white;
+  font-family: MontSerrat-SemiBold;
+  border-radius: 7px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+}
+.btn.btn-outline-success {
+  color: #10B382 !important;
+  font-family: MontSerrat-SemiBold;
+  border : 1 px solid #10B382 !important;
+}
+.btn.btn-success {
+  background: linear-gradient(153deg, rgba(57,229,97,1) 0%, rgba(57,229,97,1) 30%, rgba(16,179,130,1) 100%) !important;
+  font-family: MontSerrat-SemiBold;
+  border : none;
+}
+.btn.btn-outline-secondary {
+  font-family: MontSerrat-SemiBold;
+  border : 1px solid #C8CCDF;
+  color: #9DA2B9 !important;
+}
+#homePage .hero-image {
+  height: 111vh;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  background-color: #fff;
+}
 
+#homePage .content-hero {
+  margin-top: 6rem;
+}
+
+#homePage .content-hero h1 {
+  font-family: MontSerrat-SemiBold;
+    color: white;
+    line-height: 54px;
+}
+#homePage .content-hero ul {
+  width: 86%;
+  padding-left: 0;
+}
+#homePage .content-hero ul li {
+  font-family: MontSerrat-Regular;
+    color: white;
+    font-size: 15px;
+    line-height: 33px;
+}
+
+#homePage .reason-why {
+
+}
+
+#homePage .reason-why p {
+  font-size: 14px;
+  font-family: MontSerrat-Light;
+  line-height: 28px;
+}
+
+#homePage .how-to {
+  margin-top: 8rem;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .6s
+}
+.fade-enter,
+.fade-leave-to{
+  opacity: 0
+}
+
+#homePage .statt .v2.container {
+  margin-top: 8rem;
+}
+#homePage .statt .bg-white {
+  position: relative;
+  border-radius: 10px;
+}
+#homePage .statt .bg-white img#bg-down{
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+}
+#homePage .statt .bg-white p {
+  color: #757A91;
+  font-family: MontSerrat-Regular;
+  font-size: 14px;
+}

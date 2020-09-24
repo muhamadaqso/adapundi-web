@@ -7,7 +7,13 @@ export default {
   },
   data() {
     return {
-
+      stepActive : 1
+    }
+  },
+  methods: {
+    moveStepActive(num)
+    {
+      this.stepActive = num
     }
   }
 }

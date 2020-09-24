@@ -1,8 +1,7 @@
 <template>
-    <div class="sticky-top">
-      <img src="@/assets/img/rounded-top.png" alt="" style="position: absolute; left: 0%;">
-    <b-navbar id="Navgeneral" class="py-3" toggleable="lg" >
-        <b-container>
+    <div :class="{'fixed-top': $route.name == 'Home', 'sticky-top': $route.name !== 'Home'}">
+    <b-navbar id="Navgeneral" class="py-3" toggleable="lg" :class="{'bg-white': $route.name !== 'Home'}">
+        <b-container class="v2">
             <b-navbar-brand href="#" @click="$router.push({name:'Home'})">
                 <img src="@/assets/img/logo.png" alt="Kitten" width="52" height="52">
                 AdaPundi
@@ -21,7 +20,7 @@
                     <b-nav-item href="#">Blog</b-nav-item>
                     <b-nav-item href="#">Layanan Pengaduan</b-nav-item>
                     <b-nav-item href="#">FAQ</b-nav-item>
-                    <b-nav-item href="#"><b-button variant="outline-warning">TKB90=98.82%</b-button></b-nav-item>
+                    <b-nav-item href="#"><b-button pill variant="outline-warning">TKB90=98.82%</b-button></b-nav-item>
                 </b-navbar-nav>
             </b-collapse>
         </b-container>
@@ -29,15 +28,42 @@
 </div>
 </template>
 
-<style>
-@media (min-width: 1200px) {
-  #Navgeneral .container {
-    max-width: 1270px !important;
-  }
+<script>
+export default {
+    name: 'Navbar',
+    data() {
+      return {
+      }
+    },
+    mounted()
+    {
+        $(window).scroll(function() {
+          if ($(document).scrollTop() > 90) {
+              $('#Navgeneral').addClass('shadow-sm bg-white');
+          } else {
+              $('#Navgeneral').removeClass('shadow-sm bg-white');
+          }
+        });
+    },
 }
+</script>
 
+<style>
+
+#Navgeneral {
+  -webkit-transition: background-color 1s ease-out;
+  -moz-transition: background-color 1s ease-out;
+  -o-transition: background-color 1s ease-out;
+  transition: background-color 1s ease-out;
+}
 .nav-item {
     display: flex;
+}
+.fixed-top .nav-item a, .fixed-top a.navbar-brand {
+  color: white !important;
+}
+.fixed-top .shadow-sm.bg-white .nav-item a, .fixed-top .shadow-sm.bg-white a.navbar-brand {
+  color: black !important;
 }
  .nav-item a {
         align-self: center;

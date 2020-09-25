@@ -1,4 +1,18 @@
-
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: #DFE6EF;
+  border: 1px solid #dcdcdc;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 3px;
+}
+.dot.active {
+  width: 19px !important;
+    background-color: #10B382 !important;
+    border: 1px solid #10B382;
+    border-radius: 40% !important;
+}
 .cursor-pointer {
   cursor: pointer;
 }
@@ -154,6 +168,20 @@ h6 {
 }
 
 #homePage .activity{
+  position: relative;
   margin-top: 7rem;
   background: linear-gradient(180deg, rgb(38 226 81) 0%, rgb(40 156 67 / 79%) 23%, rgba(16,179,130,1) 100%);
+}
+
+#homePage .they-say {
+  position: relative;
+  margin-top: 7rem;
+}
+
+#homePage .they-say #say-slide .carousel-3d-container .carousel-3d-slide {
+  border-radius: 50%;
+}
+#homePage .they-say #say-slide .carousel-3d-container .carousel-3d-slide.right-1, #homePage .they-say #say-slide .carousel-3d-container .carousel-3d-slide.right-2,
+#homePage .they-say #say-slide .carousel-3d-container .carousel-3d-slide.left-1, #homePage .they-say #say-slide .carousel-3d-container .carousel-3d-slide.left-2 {
+  opacity: .6 !important;
 }

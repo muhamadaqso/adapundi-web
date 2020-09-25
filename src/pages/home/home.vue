@@ -225,7 +225,9 @@
     </b-container>
   </div>
 
-  <div class="activity">
+  <div class="activity pb-5">
+    <img src="@/assets/img/activity-top.png" alt="" style="position:absolute; left:0; top:0;">
+    <img src="@/assets/img/activity-bottom.png" alt="" style="position:absolute; right:0; bottom:0;">
     <h3 class="text-center py-5 f-white">Aktifitas Offline AdaPundi</h3>
     <b-container class=" mt-4">
       <b-row>
@@ -259,6 +261,34 @@
         <b-button block variant="outline-light text-center">Lihat Lebih Banyak</b-button>
       </div>
     </b-container>
+  </div>
+
+  <div class="they-say">
+    <h3 class="text-center py-5 f-green">Kata Mereka Tentang AdaPundi</h3>
+    <div class="mt-5">
+        <b-container>
+            <div id="say-slide">
+                <carousel-3d :perspective="0" :space="200" :display="5" :border="0" :width="120" :height="120">
+                  <slide v-for="(slide, i) in slidesdes" :index="i" v-bind:key="i" >
+                   <template slot-scope="{ index, isCurrent, leftIndex, rightIndex }">
+                     <figure @click="getActive(index)">
+                      <img :id="isCurrent ? 'activedSay':''"  :data-index="index" :class="{ current: isCurrent, onLeft: (leftIndex >= 0), onRight: (rightIndex >= 0) }" :src="slide.img">
+                    </figure>
+                  </template>
+                  </slide>
+                </carousel-3d>
+            </div>
+
+            <div>
+              <h5 class="text-center">{{slidesdes[contSay].name}}</h5>
+              <p class="text-center mx-auto">{{slidesdes[contSay].capt}}</p>
+            </div>
+
+            <div class="mt-4 text-center">
+              <span v-for="(ck, i) in slidesdes" :index="i" v-bind:key="i" class="dot" :class="{'active': contSay == i}"></span>
+            </div>
+        </b-container>
+    </div>
   </div>
 
 </div>

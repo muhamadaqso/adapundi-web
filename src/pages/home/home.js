@@ -11,12 +11,35 @@ export default {
   data() {
     return {
       stepActive : 1,
+      contSay : 0,
       slides: [
         {img: require('@/assets/img/video1.png')},
         {img: require('@/assets/img/video2.png')},
         {img: require('@/assets/img/video5.png')},
         {img: require('@/assets/img/video4.png')},
         {img: require('@/assets/img/video3.png')},
+      ],
+      slidesdes: [
+        {img: require('@/assets/img/say1.png'),
+         name: "Eta Karmaila",
+         capt:"“Akhirnya AdaPundi sudah kembali normal. Bisnis ku bisa berjalan lancar kembali berkat bantuan AdaPundi. Semoga Adapundi makin maju dan terus berkembang sehingga kedepannya bisnis ku juga bisa makin besar. Terima kasih AdaPundi sudah membantu ku disetiap saat dikala sedang membutuhkan bantuan.”"
+        },
+        {img: require('@/assets/img/say2.png'),
+         name: "Zeta Jatmiko",
+         capt:"“Makasih adapundi, yay new normal sudah bisa pencairan. Aku senang AdaPundi sudah kembali. Membantu aku dalam menjalankan bisnis aku. Terima kasih AdaPundi semoga semakin meroket dan memuaskan hati pelanggannya.”"
+        },
+        {img: require('@/assets/img/say1.png'),
+         name: "Eta Karmaila",
+         capt:"“Akhirnya AdaPundi sudah kembali normal. Bisnis ku bisa berjalan lancar kembali berkat bantuan AdaPundi. Semoga Adapundi makin maju dan terus berkembang sehingga kedepannya bisnis ku juga bisa makin besar. Terima kasih AdaPundi sudah membantu ku disetiap saat dikala sedang membutuhkan bantuan.”"
+        },
+        {img: require('@/assets/img/say1.png'),
+         name: "Eta Karmaila",
+         capt:"“Akhirnya AdaPundi sudah kembali normal. Bisnis ku bisa berjalan lancar kembali berkat bantuan AdaPundi. Semoga Adapundi makin maju dan terus berkembang sehingga kedepannya bisnis ku juga bisa makin besar. Terima kasih AdaPundi sudah membantu ku disetiap saat dikala sedang membutuhkan bantuan.”"
+        },
+        {img: require('@/assets/img/say2.png'),
+         name: "Zeta Jatmiko",
+         capt:"“Makasih adapundi, yay new normal sudah bisa pencairan. Aku senang AdaPundi sudah kembali. Membantu aku dalam menjalankan bisnis aku. Terima kasih AdaPundi semoga semakin meroket dan memuaskan hati pelanggannya.”"
+        }
       ],
       images: [
         "https://i.wifegeek.com/200426/f9459c52.jpg",
@@ -47,6 +70,12 @@ export default {
     moveStepActive(num)
     {
       this.stepActive = num
-    }
+    },
+    getActive(sss) {
+    this.contSay =  sss;
+  }
+  },
+  mounted()
+  {
   }
 }

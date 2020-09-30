@@ -263,9 +263,9 @@
     </b-container>
   </div>
 
-  <div class="they-say">
+  <div class="they-say mx-auto">
     <h3 class="text-center py-5 f-green">Kata Mereka Tentang AdaPundi</h3>
-    <div class="mt-5">
+    <div class="my-5">
         <b-container>
             <div id="say-slide">
                 <carousel-3d :perspective="0" :space="200" :display="5" :border="0" :width="120" :height="120">
@@ -280,8 +280,8 @@
             </div>
 
             <div>
-              <h5 class="text-center">{{slidesdes[contSay].name}}</h5>
-              <p class="text-center mx-auto">{{slidesdes[contSay].capt}}</p>
+              <h5 style="font-family: MontSerrat-SemiBold;" class="mt-4 f-semiBlack text-center">{{slidesdes[contSay].name}}</h5>
+              <p class="text-center mx-auto mt-4 pt-1 f-gray">{{slidesdes[contSay].capt}}</p>
             </div>
 
             <div class="mt-4 text-center">
@@ -291,7 +291,26 @@
     </div>
   </div>
 
+  <div class="our-partner pb-4">
+    <h3 class="text-center pt-5 f-semiBlack">Mitra Kami</h3>
+    <div class="my-5">
+      <b-container>
+        <div id="partner-slide">
+          <carousel-3d :perspective="0" :disable3d="true" :space="185" :border="0" :width="149" :height="80" :clickable="false" :controls-visible="true">
+            <slide v-for="(slide, i) in slidesMitra" :index="i" v-bind:key="i">
+              <figure>
+                <img v-bind:src="slide.img">
+              </figure>
+            </slide>
+          </carousel-3d>
+        </div>
+      </b-container>
+    </div>
+  </div>
+  <Footer/>
+
 </div>
 </template>
+
 <script src="./home.js">
 </script>

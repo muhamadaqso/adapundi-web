@@ -13,14 +13,14 @@
 
                 <!-- Right aligned nav items -->
                 <b-navbar-nav class="ml-auto">
-                    <b-nav-item href="#" @click="$router.push({name:'contact'})">Pinjaman</b-nav-item>
-                    <b-nav-item href="#">Investasi</b-nav-item>
+                    <b-nav-item href="#" @click="$router.push({name:'Loans'})" :class="{activeNav: $route.name == 'Loans'}">Pinjaman</b-nav-item>
+                    <b-nav-item href="#" @click="$router.push({name:'Invest'})">Investasi</b-nav-item>
                     <b-nav-item href="#" @click="$router.push({name:'About'})">Tentang Kami</b-nav-item>
                     <b-nav-item href="#">Investasi</b-nav-item>
                     <b-nav-item href="#">Blog</b-nav-item>
                     <b-nav-item href="#">Layanan Pengaduan</b-nav-item>
                     <b-nav-item href="#">FAQ</b-nav-item>
-                    <b-nav-item href="#"><b-button pill variant="outline-warning">TKB90=98.82%</b-button></b-nav-item>
+                    <b-nav-item href="#"><button class="round btn" type="button" id="buttonTKB">TKB90=98.82%</button></b-nav-item>
                 </b-navbar-nav>
             </b-collapse>
         </b-container>
@@ -40,11 +40,21 @@ export default {
         $(window).scroll(function() {
           if ($(document).scrollTop() > 90) {
               $('#Navgeneral').addClass('shadow-sm bg-white');
+              // if(this.$router.history.current.path == 'Home'){
+              //   $('#buttonTKB').addClass('btn btn-outline-warning');
+              //   $('#buttonTKB').removeClass('btn btn-outline-light');
+              // }
           } else {
               $('#Navgeneral').removeClass('shadow-sm bg-white');
+              // if(this.$router.history.current.path == 'Home'){
+              //   $('#buttonTKB').removeClass('btn btn-outline-warning');
+              //   $('#buttonTKB').addClass('btn btn-outline-light');
+              // }
           }
         });
     },
+    methods : {
+    }
 }
 </script>
 
@@ -62,9 +72,20 @@ export default {
 .fixed-top .nav-item a, .fixed-top a.navbar-brand {
   color: white !important;
 }
+.fixed-top .nav-item button.btn {
+  color: #fff;
+  border: 1px solid #fff;
+}
+.fixed-top .shadow-sm.bg-white .nav-item button.btn, .sticky-top .nav-item button.btn {
+  color: #FF7227;
+  border: 1px solid #FF7227;
+}
 .fixed-top .shadow-sm.bg-white .nav-item a, .fixed-top .shadow-sm.bg-white a.navbar-brand {
   color: black !important;
 }
+ .nav-item.activeNav a {
+   color: #10B382 !important;
+ }
  .nav-item a {
         align-self: center;
         padding-right: 1.2rem !important;

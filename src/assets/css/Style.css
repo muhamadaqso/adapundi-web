@@ -1,3 +1,9 @@
+html {
+  scroll-behavior: smooth;
+}
+.round {
+  border-radius: 1rem !important;
+}
 .dot {
   height: 10px;
   width: 10px;
@@ -47,9 +53,17 @@ h6 {
   margin-left: 18px;
   height: 100px;
 }
+.carousel-3d-slide {
+  background-color: transparent !important;
+}
 @media (min-width: 1200px) {
   .container.v2 {
     max-width: 1270px !important;
+  }
+}
+@media(min-width: 576px) {
+  #loansPage .jumbotron {
+    padding: 1rem 2rem !important;
   }
 }
 .btn.btn-warning {
@@ -75,6 +89,29 @@ h6 {
   font-family: MontSerrat-SemiBold;
   border : 1px solid #C8CCDF;
   color: #9DA2B9 !important;
+}
+#loansPage .hero-image {
+  height: 92vh;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  background-color: #fff;
+}
+#loansPage .hero-text{
+  margin-top: 7rem;
+}
+#loansPage .hero-text h2{
+  font-family: MontSerrat-Bold;
+}
+#loansPage .hero-text p{
+  line-height: 36px;
+  font-family: MontSerrat-Light;
+  color: #757A91;
+}
+#loansPage .hero-text p strong {
+  font-family: MontSerrat-SemiBold;
+
 }
 #homePage .hero-image {
   height: 111vh;
@@ -126,34 +163,26 @@ h6 {
 .fade-leave-to{
   opacity: 0
 }
-#homePage .statt {
+.statt {
   margin-top: 6rem;
 }
-#homePage .statt .v2.container {
+.statt .v2.container {
   margin-top: 8rem;
 }
-#homePage .statt .bg-white {
+.statt .bg-white {
   position: relative;
   border-radius: 10px;
 }
-#homePage .statt .bg-white img#bg-down{
+.statt .bg-white img#bg-down{
   position: absolute;
   top: 0;
   right: 0;
   height: 100%;
 }
-#homePage .statt .bg-white p {
+.statt .bg-white p {
   color: #757A91;
   font-family: MontSerrat-Regular;
   font-size: 14px;
-}
-
-#homePage .story #story-slide .carousel-3d-container .prev span, #homePage .story #story-slide .carousel-3d-container .next span {
-  font-size: 26px;
-    background: white;
-    color: #10B382;
-    padding: 1px 14px;
-    border-radius: 3rem;
 }
 
 #homePage .story .mt-5 p.title {
@@ -176,8 +205,19 @@ h6 {
 #homePage .they-say {
   position: relative;
   margin-top: 7rem;
+  width: 65%;
 }
-
+#homePage .they-say p {
+  font-family: MontSerrat-Light;
+    line-height: 30px;
+}
+#homePage .story #story-slide .carousel-3d-container .prev span, #homePage .story #story-slide .carousel-3d-container .next span {
+  font-size: 26px;
+    background: white;
+    color: #10B382;
+    padding: 1px 14px;
+    border-radius: 3rem;
+}
 #homePage .they-say #say-slide .carousel-3d-container .carousel-3d-slide {
   border-radius: 50%;
 }
@@ -185,3 +225,23 @@ h6 {
 #homePage .they-say #say-slide .carousel-3d-container .carousel-3d-slide.left-1, #homePage .they-say #say-slide .carousel-3d-container .carousel-3d-slide.left-2 {
   opacity: .6 !important;
 }
+
+#homePage .our-partner {
+    background: #F8F8FA;
+}
+
+#homePage .our-partner #partner-slide .carousel-3d-slide img {
+  width: auto !important;
+}
+#homePage .our-partner #partner-slide  .carousel-3d-container .prev,  #homePage .our-partner #partner-slide  .carousel-3d-container .next {
+  line-height: 0px !important;
+}
+#homePage .our-partner #partner-slide  .carousel-3d-container .prev span, #homePage .our-partner #partner-slide   .carousel-3d-container .next span {
+  font-size: 19px;
+    background: white;
+    color: #10B382;
+    padding: 1px 11px;
+    border-radius: 50%;
+    box-shadow: 1px 3px 18px #cec5c5;
+}
+

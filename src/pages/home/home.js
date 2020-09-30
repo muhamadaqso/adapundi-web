@@ -1,10 +1,12 @@
 import Navbar from "../../components/Navbar.vue"
+import Footer from "../../components/Footer.vue"
 import { Carousel3d, Slide } from 'vue-carousel-3d';
 
 export default {
   name: "home",
   components: {
     Navbar,
+    Footer,
     Carousel3d,
     Slide,
   },
@@ -12,6 +14,14 @@ export default {
     return {
       stepActive : 1,
       contSay : 0,
+      slidesMitra: [
+        {img: require('@/assets/img/Logo Bank BCA.png')},
+        {img: require('@/assets/img/cPEgUbJW0unxwbmnTXZEa6ygrvzSZmjXOkL4aDRe.png')},
+        {img: require('@/assets/img/faspay-logo.png')},
+        {img: require('@/assets/img/nexmo_logo_v3.png')},
+        {img: require('@/assets/img/Logo Bank BNI.png')},
+        {img: require('@/assets/img/logo-futuready.png')},
+      ],
       slides: [
         {img: require('@/assets/img/video1.png')},
         {img: require('@/assets/img/video2.png')},

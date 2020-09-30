@@ -162,7 +162,7 @@ export default {
 
 <style>
 .hooper {
- height: 114vh;
+ height: 114vh !important;
 }
 .hooper-pagination ol.hooper-indicators .hooper-indicator:hover, .hooper-pagination ol.hooper-indicators .hooper-indicator.is-active{
   background-color: #10B382 !important;

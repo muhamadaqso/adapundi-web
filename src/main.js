@@ -9,7 +9,9 @@ import './assets/css/Style.css'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+window.NProgress = require("nprogress/nprogress");
 
+import 'nprogress/nprogress.css'
 Vue.config.productionTip = false
 const router = require("./router").default;
 

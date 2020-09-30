@@ -1,6 +1,64 @@
 html {
   scroll-behavior: smooth;
 }
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: linear-gradient(rgba(229, 229, 229, 0.3), rgba(161, 165, 171, 0.85));
+  -webkit-box-shadow: inset 0 0 6px rgba(245,246,248,0.8);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: linear-gradient(rgba(229, 229, 229, 0.3), rgba(161, 165, 171, 0.85));
+}
+ /* Let's get this party started */
+ ::-webkit-scrollbar {
+  width: 8px;
+}
+/*NProgress*/
+/* Make clicks pass-through */
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: #FF6549!important;
+
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 5px !important;
+}
+
+/* Fancy blur effect */
+
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+  opacity: 1.0;
+
+  -webkit-transform: rotate(3deg) translate(0px, -4px);
+  -ms-transform: rotate(3deg) translate(0px, -4px);
+  transform: rotate(3deg) translate(0px, -4px);
+}
+
+#nprogress .spinner-icon {
+  width: 18px;
+  height: 18px;
+  box-sizing: border-box;
+
+  border: solid 2px transparent;
+  border-radius: 50%;
+
+  -webkit-animation: nprogress-spinner 400ms linear infinite;
+  animation: nprogress-spinner 400ms linear infinite;
+}
 .round {
   border-radius: 1rem !important;
 }
@@ -90,6 +148,14 @@ h6 {
   border : 1px solid #C8CCDF;
   color: #9DA2B9 !important;
 }
+#loansPage .invest-stat.hero-image {
+  height: 108vh;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  background-color: #fff;
+}
 #loansPage .hero-image {
   height: 92vh;
   background-position: 50%;
@@ -114,7 +180,7 @@ h6 {
 
 }
 #homePage .hero-image {
-  height: 111vh;
+  height: 114vh;
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -125,7 +191,10 @@ h6 {
 #homePage .content-hero {
   margin-top: 6rem;
 }
-
+#homePage .content-hero h2 {
+  font-family: MontSerrat-Regular;
+    color: white;
+}
 #homePage .content-hero h1 {
   font-family: MontSerrat-SemiBold;
     color: white;
@@ -135,7 +204,7 @@ h6 {
   width: 86%;
   padding-left: 0;
 }
-#homePage .content-hero ul li {
+#homePage .content-hero ul li, p {
   font-family: MontSerrat-Regular;
     color: white;
     font-size: 15px;
@@ -240,7 +309,7 @@ h6 {
   font-size: 19px;
     background: white;
     color: #10B382;
-    padding: 1px 11px;
+    padding: 1px 13px 5px;
     border-radius: 50%;
     box-shadow: 1px 3px 18px #cec5c5;
 }

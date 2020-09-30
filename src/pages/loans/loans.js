@@ -18,5 +18,11 @@ export default {
     numberFormat(data) {
         return data.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     },
+
+  },
+  mounted()
+  {
+    document.title = 'Pinjaman | AdaPundi'
+
   }
 }

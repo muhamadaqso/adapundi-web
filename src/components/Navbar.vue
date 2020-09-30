@@ -14,11 +14,10 @@
                 <!-- Right aligned nav items -->
                 <b-navbar-nav class="ml-auto">
                     <b-nav-item href="#" @click="$router.push({name:'Loans'})" :class="{activeNav: $route.name == 'Loans'}">Pinjaman</b-nav-item>
-                    <b-nav-item href="#" @click="$router.push({name:'Invest'})">Investasi</b-nav-item>
-                    <b-nav-item href="#" @click="$router.push({name:'About'})">Tentang Kami</b-nav-item>
-                    <b-nav-item href="#">Investasi</b-nav-item>
-                    <b-nav-item href="#">Blog</b-nav-item>
-                    <b-nav-item href="#">Layanan Pengaduan</b-nav-item>
+                    <b-nav-item href="#" @click="$router.push({name:'Invest'})" :class="{activeNav: $route.name == 'Invest'}">Investasi</b-nav-item>
+                    <b-nav-item href="#" @click="$router.push({name:'AboutUs'})" :class="{activeNav: $route.name == 'AboutUs'}">Tentang Kami</b-nav-item>
+                    <b-nav-item href="#" @click="$router.push({name:'Blog'})" :class="{activeNav: $route.name == 'Blog', activeNav: $route.name == 'BlogDetail'}">Blog</b-nav-item>
+                    <b-nav-item href="#" @click="$router.push({name:'Complaints'})" :class="{activeNav: $route.name == 'Complaints'}">Layanan Pengaduan</b-nav-item>
                     <b-nav-item href="#">FAQ</b-nav-item>
                     <b-nav-item href="#"><button class="round btn" type="button" id="buttonTKB">TKB90=98.82%</button></b-nav-item>
                 </b-navbar-nav>
@@ -92,7 +91,7 @@ export default {
         padding-left: 1.2rem !important;
         font-family: MontSerrat-Regular;
         color: black !important;
-        font-size: 12px;
+        font-size: 13px;
     }
     .nav-item a button {
       font-size: 12px;

@@ -148,10 +148,10 @@
           <h5 class="f-semiBlack">Pinjaman Staff</h5>
           <div class="lines-green"></div>
           <ul class="LG mt-3">
-            <li>Limit Pinjaman hingga Rp4.000.000</li>
-            <li>Suku Bunga Pinjaman 0,6% per hari</li>
-            <li>Batas waktu Pinjaman 91 - 180 hari</li>
-            <li>Data yang dibutuhkan KTP</li>
+            <li>Limit Pinjaman hingga <strong>Rp4.000.000</strong></li>
+            <li>Suku Bunga Pinjaman <strong>0,6% per hari</strong></li>
+            <li>Batas waktu Pinjaman <strong>91 - 180 hari</strong></li>
+            <li>Data yang dibutuhkan <strong>KTP</strong></li>
           </ul>
         </b-col>
       </b-row>
@@ -160,10 +160,10 @@
           <h5 class="f-semiBlack">Pinjaman Produktif</h5>
           <div class="lines-orange"></div>
           <ul class="LO mt-3">
-            <li>Limit Pinjaman hingga Rp10.000.000</li>
-            <li>Suku Bunga Pinjaman 4% per bulan</li>
-            <li>Batas waktu Pinjaman hingga 3 bulan</li>
-            <li>Data yang dibutuhkan KTP dan Bukti usaha Anda</li>
+            <li>Limit Pinjaman hingga <strong>Rp10.000.000</strong></li>
+            <li>Suku Bunga Pinjaman <strong>4% per bulan</strong></li>
+            <li>Batas waktu Pinjaman <strong>hingga 3 bulan</strong></li>
+            <li>Data yang dibutuhkan <strong>KTP dan Bukti usaha Anda</strong></li>
           </ul>
         </b-col>
         <b-col md="4 mr-auto">
@@ -213,6 +213,10 @@
   display: inline-block;
   width: 1em;
   margin-left: -1em;
+}
+.diff ul li {
+  font-family: MontSerrat-light;
+  color: #4E5263;
 }
 .diff h5 {
   font-family: MontSerrat-Regular;

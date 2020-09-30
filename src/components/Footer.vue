@@ -1,6 +1,6 @@
 <template>
   <div id="footer">
-    <div class="get-on-play">
+    <div class="get-on-play" v-if="$route.name !== 'BlogDetail'">
       <img src="@/assets/img/activity-top.png" alt="" style="position:absolute; left:0; top:0;">
       <img src="@/assets/img/activity-bottom.png" alt="" style="position:absolute; right:0; bottom:0;">
       <b-container class="v2">
@@ -14,7 +14,7 @@
             <div>
               <h2 class="f-white mb-4 pb-4">Hadir untuk solusi finansial Anda, unduh aplikasi AdaPundi Sekarang</h2>
               <h5 class="f-white mb-3">Download dan Ajukan Sekarang!</h5>
-              <img class="cursor-pointer" width="185" src="@/assets/img/gplay.png" alt="">
+              <a href="https://play.google.com/store/apps/details?id=com.yinshan.program.banda"><img width="185" src="@/assets/img/gplay.png" alt=""></a>
             </div>
           </b-col>
         </b-row>
@@ -41,27 +41,27 @@
               <b-row class="mb-5">
                 <b-col cols="6">
                   <span class="acount-icon">
-                    <a href="#">Pinjaman</a>
+                    <a href="#"  @click="$router.push({name:'Loans'})">Pinjaman</a>
                   </span>
                 </b-col>
                 <b-col cols="6">
                   <span class="acount-icon">
-                    <a href="#">Blog</a>
+                    <a href="#" @click="$router.push({name:'Blog'})">Blog</a>
                   </span>
                 </b-col>
                 <b-col cols="6">
                   <span class="acount-icon">
-                    <a href="#">Investasi</a>
+                    <a href="#" @click="$router.push({name:'Invest'})">Investasi</a>
                   </span>
                 </b-col>
                 <b-col cols="6">
                   <span class="acount-icon">
-                    <a href="#">Layanan Pengaduan</a>
+                    <a href="#" @click="$router.push({name:'Complaints'})">Layanan Pengaduan</a>
                   </span>
                 </b-col>
                 <b-col cols="6">
                   <span class="acount-icon">
-                    <a href="#">Tentang Kami</a>
+                    <a href="#" @click="$router.push({name:'AboutUs'})">Tentang Kami</a>
                   </span>
                 </b-col>
                 <b-col cols="6">
@@ -73,11 +73,11 @@
             </div>
             <p>Terhubung dengan kami</p>
             <ul class="social-icon">
-                <a href="#" class="social"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                <a href="#" class="social"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                <a href="#" class="social"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                <a href="#" class="social"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                <a href="#" class="social"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                <a href="https://www.facebook.com/AdaPundiOfficial/" class="social"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="https://twitter.com/AdaPundi/" class="social"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/company/adapundi/" class="social"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com/adapundiofficial/" class="social"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <a href="https://www.youtube.com/channel/UCz6krbINnDqj1wDIe-_r3CA" class="social"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
             </ul>
         </div>
         <div class="col-sm-4 text-center">
@@ -95,7 +95,7 @@
             <p class="mt-3" style="color:#C8CCDF; line-height:24px; font-size:12px;">Capital Place Building, Lantai 47, Suite B, Jl. Jend.
               Gatot Subroto No. Kav. 18, RT 6 RW 1, Kelurahan Kuningan Barat, Kecamatan Mampang Prapatan,
               Jakarta 12710, DKI Jakarta</p>
-              <p style="color:#C8CCDF; line-height:24px; font-size:12px;">Telepon: (021) 50860666 <br> Email: cs@AdaPundi.com</p>
+              <p style="color:#C8CCDF; line-height:24px; font-size:12px;">Telepon: (021) 50860666 <br> Email: <a style="color:#C8CCDF;" href="mailto:cs@AdaPundi.com">cs@AdaPundi.com</a></p>
             </div>
         </div>
         <hr>

@@ -1,6 +1,8 @@
 import Navbar from "../../components/Navbar.vue"
 import Footer from "../../components/Footer.vue"
+import Slider from "../../components/Slider.vue"
 import { Carousel3d, Slide } from 'vue-carousel-3d';
+import ModalGallery from "../../components/ModalGallery.vue";
 
 export default {
   name: "home",
@@ -9,10 +11,20 @@ export default {
     Footer,
     Carousel3d,
     Slide,
+    Slider,
+    ModalGallery
   },
   data() {
     return {
       stepActive : 1,
+      seeMoreModal: false,
+      currentGalleryIndex: null,
+      gallery : [
+        {images: require('@/assets/img/img1.png')},
+        {images: require('@/assets/img/img2.png')},
+        {images: require('@/assets/img/img3.png')},
+        {images: require('@/assets/img/img4.png')},
+      ],
       contSay : 0,
       slidesMitra: [
         {img: require('@/assets/img/Logo Bank BCA.png')},
@@ -82,10 +94,18 @@ export default {
       this.stepActive = num
     },
     getActive(sss) {
-    this.contSay =  sss;
-  }
+      this.contSay =  sss;
+    },
+    updateCurrentIndex(imageIndex){
+      // alert(folderIndex+', '+imageIndex);
+      this.seeMoreModal = !this.seeMoreModal;
+      // this.currentGalleryIndex = 0;
+      this.currentGalleryIndex = imageIndex;
+    },
   },
   mounted()
   {
+    document.title = 'Home | AdaPundi'
+
   }
 }

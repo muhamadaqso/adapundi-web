@@ -1,25 +1,7 @@
 <template>
 <div id="homePage">
   <Navbar/>
-  <b-jumbotron class="img-fluid hero-image" :style="{ backgroundImage: `url(${require('@/assets/img/bg-slide-1.svg')})` }">
-    <b-container class="content-hero">
-        <b-row>
-          <b-col md="8">
-            <div class="hero-text">
-              <h1>Mewujudkan keuangan inklusif melalui teknoloi sains</h1>
-              <ul class="mt-4">
-                <li>Kami akan memberikan layanan kredit keuangan yang dipersonalisasikan sesuai berbagai tingkat kondisi kebutuhan pelanggan di Indonesia.</li>
-                <li>Sejak pengoperasian platform, kami telah menyediakan lebih dari 3.600.000+ layanan pinjaman.</li>
-                <li>AdaPundi terdaftar dan diawasi oleh Otoritas Jasa Keuangan (OJK), dan nomor izin yang diperoleh adalah: S-448 / NB.213 / 2019</li>
-              </ul>
-            </div>
-            <div class="mt-5 ml-md-3">
-              <b-button variant="warning w-50 py-3">Ajukan Sekarang</b-button>
-            </div>
-          </b-col>
-      </b-row>
-    </b-container>
-  </b-jumbotron>
+  <Slider/>
 
   <div class="reason-why mt-5">
     <h3 class="text-center py-5 f-green">Mengapa harus AdaPundi?</h3>
@@ -232,36 +214,37 @@
     <b-container class=" mt-4">
       <b-row>
         <b-col md="3">
-          <img src="@/assets/img/img1.png" alt="">
+          <img class="cursor-pointer" src="@/assets/img/img1.png" alt="" @click="updateCurrentIndex(0)">
         </b-col>
         <b-col md="9">
           <b-row>
             <b-col md="4">
-              <img src="@/assets/img/img3.png" alt="">
+              <img class="cursor-pointer" src="@/assets/img/img3.png" alt="" @click="updateCurrentIndex(2)">
             </b-col>
             <b-col md="4">
-              <img src="@/assets/img/img4.png" alt="">
+              <img class="cursor-pointer" src="@/assets/img/img4.png" alt="" @click="updateCurrentIndex(3)">
             </b-col>
             <b-col md="4">
-              <img src="@/assets/img/img3.png" alt="">
+              <img class="cursor-pointer" src="@/assets/img/img3.png" alt="" @click="updateCurrentIndex(2)">
             </b-col>
           </b-row>
           <b-row class="mt-3">
             <b-col md="4">
-              <img src="@/assets/img/img4.png" alt="">
+              <img class="cursor-pointer" src="@/assets/img/img4.png" alt="" @click="updateCurrentIndex(3)">
             </b-col>
             <b-col md="8">
-              <img src="@/assets/img/img2.png" alt="">
+              <img class="cursor-pointer" src="@/assets/img/img2.png" alt="" @click="updateCurrentIndex(1)">
             </b-col>
           </b-row>
         </b-col>
       </b-row>
 
       <div class="mt-5 w-25 d-flex mx-auto">
-        <b-button block variant="outline-light text-center">Lihat Lebih Banyak</b-button>
+        <b-button block variant="outline-light text-center" @click="seeMoreModal = !seeMoreModal">Lihat Lebih Banyak</b-button>
       </div>
     </b-container>
   </div>
+  <modal-gallery v-model="seeMoreModal" :galleries="gallery" :title="'Aktifitas Offline'" :index="currentGalleryIndex"></modal-gallery>
 
   <div class="they-say mx-auto">
     <h3 class="text-center py-5 f-green">Kata Mereka Tentang AdaPundi</h3>
@@ -314,3 +297,12 @@
 
 <script src="./home.js">
 </script>
+
+<style>
+#homePage .how-to h5{
+  font-family: MontSerrat-Regular;
+}
+#homePage .how-to p{
+  font-family: MontSerrat-Light;
+}
+</style>

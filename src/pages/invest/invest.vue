@@ -7,20 +7,25 @@
             <img src="@/assets/img/loans-bg.png" alt="" style="position: absolute; right: 0; top: 0%;">
           <b-col md="6">
             <div class="hero-text">
-              <h2 class="f-semiBlack">Investasi Pinjaman AdaPundi</h2>
+              <h2 class="f-semiBlack mb-4">Investasi Pinjaman AdaPundi</h2>
               <p>AdaPundi adalah Fintech P2P Lending Indonesia yang menghubungkan Investor dan Peminjam. Masukkan nominal investasi yang Anda inginkan dan dapatkan hasilnya.</p>
             </div>
+            <ul class="invest-list">
+              <li>Pembiayaan Usaha Kecil Menengah</li>
+              <li>Tanpa Barang Jaminan</li>
+              <li>Pilih Nominal Sesuai Keinginan Anda</li>
+            </ul>
           </b-col>
           <b-col md="6" style="position:relative;">
             <div class="simulation bg-white shadow-sm w-75 mx-auto">
               <div class="headTabs mb-3">
-                <h6 class="text-center f-semiBold">Simulasi Investasi Pinjaman</h6>
+                <h6 class="text-center f-semiBlack py-2">Simulasi Investasi Pinjaman</h6>
               </div>
 
               <div class="content-simulation p-4">
                 <div>
                   <div class="mb-2 d-flex justify-content-between">
-                    <div class="mt-1"><h6 class="f-semiBlack">Jumlah Pinjaman</h6></div>
+                    <div class="mt-1"><h6 class="f-semiBlack">Jumlah Investasi</h6></div>
                     <div class="mt-1 f-green">Rp{{numberFormat(valueLoans)}}</div>
                   </div>
                   <input class="w-100 slider" type="range" v-model="valueLoans" min="400000" max="4000000">
@@ -30,7 +35,7 @@
                   </div>
                 </div>
 
-                <div class="mt-4 pt-3 pb-5" style="border-bottom: 1px solid #C8CCDF;">
+                <div class="mt-4 pt-3 pb-4">
                   <div class=" mb-2 d-flex justify-content-between">
                     <div class="mt-1"><h6 class="f-semiBlack">Tenor</h6></div>
                     <div class="mt-1 f-green">{{valueTenure}} Hari</div>
@@ -43,15 +48,15 @@
                 </div>
 
                 <b-row>
-                  <b-col md="6">
+                  <b-col md="6" style="border-right: 1px solid #C8CCDF;">
                     <div class="text-left mt-4">
-                      <h6 class="f-semiBlack">Bunga per tahun</h6>
+                      <h6 style="font-size: 14px;" class="f-semiBlack">Bunga per tahun</h6>
                       <h4 class="f-green">14%</h4>
                     </div>
                   </b-col>
                   <b-col md="6">
                     <div class="text-left mt-4">
-                      <h6 class="f-semiBlack">Proyeksi Imbal Hasil</h6>
+                      <h6 style="font-size: 14px;" class="f-semiBlack">Proyeksi Imbal Hasil</h6>
                       <h4 class="f-green">Rp1.297.520</h4>
                     </div>
                   </b-col>
@@ -66,7 +71,7 @@
     </b-container>
   </b-jumbotron>
 
-    <b-jumbotron class="statt img-fluid hero-image" :style="{ backgroundImage: `url(${require('@/assets/img/bg-stat.svg')})` }">
+    <b-jumbotron class="statt invest-stat img-fluid hero-image" :style="{ backgroundImage: `url(${require('@/assets/img/bg-stat.svg')})` }">
     <b-container class="v2">
       <b-row>
         <b-col md="3">
@@ -169,14 +174,51 @@
     </b-container>
   </b-jumbotron>
 
-  <div class="diff my-5">
+  <div class="diff my-5 pb-4">
     <h3 class="text-center py-5 f-semiBlack">Keuntungan Berinvestasi Bersama AdaPundi</h3>
-    <b-container class="mt-5">
+    <b-container class="mt-5 benefit">
       <b-row>
         <b-col md="6">
           <b-row>
-            <b-col>
-
+            <b-col md="2 text-center">
+              <span>1</span>
+            </b-col>
+            <b-col md="10">
+              <h6>Perlindungan Hukum</h6>
+              <p>Saat ini AdaPundi telah terdaftar di Otoritas jasa Keuangan(OJK) dan merupakan perusahaan teknologi keuangan yang memenuhi standar operasional di Indonesia.</p>
+            </b-col>
+          </b-row>
+        </b-col>
+        <b-col md="6">
+          <b-row>
+            <b-col md="2 text-center">
+              <span>2</span>
+            </b-col>
+            <b-col md="10">
+              <h6>Kekuatan Teknis yang Termuka</h6>
+              <p>Mode kontrol Big Data dan sistem anti-penipuan untuk melindungi pendanaan anda.</p>
+            </b-col>
+          </b-row>
+        </b-col>
+        <b-col md="6 mt-4">
+          <b-row>
+            <b-col md="2 text-center">
+              <span>3</span>
+            </b-col>
+            <b-col md="10">
+              <h6>Keuntungan Besar</h6>
+              <p>Suku bunga tahunan mencapai 14% untuk memberikan pengembalian terhadap pembiayaan anda.</p>
+            </b-col>
+          </b-row>
+        </b-col>
+        <b-col md="6 mt-4">
+          <b-row>
+            <b-col md="2 text-center">
+              <span>4</span>
+            </b-col>
+            <b-col md="10">
+              <h6>Partisipasi dalam Membangun Ekonomi</h6>
+              <p>Pembiayaan akan diberikan kepada pengusaha kecil di Indonesia untuk membantu mengembangkan ekonomi.</p>
             </b-col>
           </b-row>
         </b-col>
@@ -290,5 +332,41 @@
   background: #10B382;
   cursor: pointer;
     box-shadow: 1px 3px 18px #cec5c5;
+}
+ul.invest-list   {
+  list-style: none; /* Remove default bullets */
+  padding-inline-start: 25px;
+}
+ul.invest-list  li::before {
+  content: "\2022";
+  color: #10B382;
+  font-weight: bold;
+  font-size: 24px;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+ul.invest-list  li {
+  font-family: MontSerrat-SemiBold;
+  color: #757A91;
+
+}
+.benefit span {
+    text-align: center;
+    background: linear-gradient(153deg, rgba(57,229,97,1) 0%, rgba(57,229,97,1) 30%, rgba(16,179,130,1) 100%) !important;
+    padding: 8px 15px;
+    border-radius: 50%;
+    font-family: MontSerrat-SemiBold;
+    color: #fff;
+}
+.benefit h6 {
+  font-family: MontSerrat-SemiBold;
+  color: #757A91;
+}
+.benefit p {
+  font-size: 14px;
+  font-family: MontSerrat-Light;
+  color: #9DA2B9;
+  line-height: 28px;
 }
 </style>

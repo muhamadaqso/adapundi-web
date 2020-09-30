@@ -13,10 +13,13 @@
   "dependencies": {
     "bootstrap": "^4.5.2",
     "bootstrap-vue": "^2.17.3",
+    "hooper": "^0.3.4",
     "jquery": "^3.5.1",
+    "nprogress": "^0.2.0",
     "vue": "^2.6.12",
     "vue-carousel-3d": "^0.2.0",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vue-window-size": "^0.6.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

@@ -48,7 +48,7 @@
                   <h4 class="f-green">Rp{{isLoans == 0 ? '1.288.400' : 'Rp6.220.325'}}</h4>
                 </div>
                 <div class="mt-4 pt-2 ml-md-3">
-                  <b-button variant="warning w-100 py-3" @click="$bvModal.show('bv-modal-requestLoans')">Ajukan Sekarang</b-button>
+                  <b-button variant="warning w-100 py-3" @click="step = 1; $bvModal.show('bv-modal-requestLoans')">Ajukan Sekarang</b-button>
                 </div>
               </div>
             </div>
@@ -292,8 +292,8 @@
       </div>
 
     <div class="mt-5 d-flex">
-      <b-button class="ml-auto mr-5 w-50" variant="light" @click="$bvModal.hide('bv-modal-requestLoans')">Batal</b-button>
-      <b-button variant="warning py-3 w-50" @click="step == 1 ? step = 2 : $bvModal.show('bv-modal-thanks'); $bvModal.hide('bv-modal-requestLoans');">{{step == 1 ? 'Lanjut': 'Submit'}}</b-button>
+      <b-button class="ml-auto mr-5 w-50" variant="light" @click="step == 1 ? $bvModal.hide('bv-modal-requestLoans') : step = 1 ">{{step == 1 ? 'Batal': 'Kembali'}}</b-button>
+      <b-button variant="warning py-3 w-50" @click="step == 1 ? step = 2 : toThanks();">{{step == 1 ? 'Lanjut': 'Submit'}}</b-button>
     </div>
   </b-modal>
 

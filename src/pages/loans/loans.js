@@ -22,7 +22,11 @@ export default {
     numberFormat(data) {
         return data.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     },
-
+    toThanks()
+    {
+      this.$bvModal.hide('bv-modal-requestLoans')
+      this.$bvModal.show('bv-modal-thanks')
+    }
   },
   mounted()
   {

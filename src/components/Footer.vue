@@ -83,8 +83,9 @@
         <div class="col-sm-4 text-center">
             <p>Terdaftar dan diawasi oleh:</p>
             <span class="acount-icon">
-            <a href="#"><img src="@/assets/img/footer-logo1.png" class="mb-4" width="180" alt=""></a>
-            <a href="#"><img src="@/assets/img/footer-logo2.png" width="200" alt=""></a>
+            <a href="#"><img src="@/assets/img/footer-logo1.png"  width="180" alt=""></a>
+            <a href="#"><img src="@/assets/img/footer-logo2.png" width="200" class="my-3" alt=""></a>
+            <a href="#"><img src="@/assets/img/tuv-icon.jpeg" width="200" alt=""></a>
             </span>
         </div>
         <div class="col-sm-4">

@@ -178,7 +178,7 @@
     <h3 class="text-center py-5 f-semiBlack">Keuntungan Berinvestasi Bersama AdaPundi</h3>
     <b-container class="mt-5 benefit">
       <b-row>
-        <b-col md="6">
+        <b-col md="6 px-5">
           <b-row>
             <b-col md="2 text-center">
               <span>1</span>
@@ -189,7 +189,7 @@
             </b-col>
           </b-row>
         </b-col>
-        <b-col md="6">
+        <b-col md="6 px-5">
           <b-row>
             <b-col md="2 text-center">
               <span>2</span>
@@ -200,7 +200,7 @@
             </b-col>
           </b-row>
         </b-col>
-        <b-col md="6 mt-4">
+        <b-col md="6 px-5 mt-4">
           <b-row>
             <b-col md="2 text-center">
               <span>3</span>
@@ -211,7 +211,7 @@
             </b-col>
           </b-row>
         </b-col>
-        <b-col md="6 mt-4">
+        <b-col md="6 px-5 mt-4">
           <b-row>
             <b-col md="2 text-center">
               <span>4</span>
@@ -225,6 +225,8 @@
       </b-row>
     </b-container>
   </div>
+
+  <img class="w-100" src="@/assets/img/invest-foot.png" alt="">
   <Footer/>
 </div>
 </template>
@@ -354,7 +356,7 @@ ul.invest-list  li {
 .benefit span {
     text-align: center;
     background: linear-gradient(153deg, rgba(57,229,97,1) 0%, rgba(57,229,97,1) 30%, rgba(16,179,130,1) 100%) !important;
-    padding: 8px 15px;
+    padding: 9px 16px;
     border-radius: 50%;
     font-family: MontSerrat-SemiBold;
     color: #fff;

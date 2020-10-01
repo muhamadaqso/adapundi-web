@@ -124,6 +124,11 @@ h6 {
     padding: 1rem 2rem !important;
   }
 }
+.btn-light {
+  color: #4E5263 !important;
+  background-color: #E1E4EF !important;
+  border-color: #E1E4EF !important;
+}
 .btn.btn-warning {
   background: linear-gradient(180deg, rgba(255,158,44,1) 0%, rgba(255,158,44,1) 30%, rgba(255,114,39,1) 100%) !important;
   border : none;

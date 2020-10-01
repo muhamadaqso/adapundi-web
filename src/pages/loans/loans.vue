@@ -14,8 +14,8 @@
           <b-col md="6" style="position:relative;">
             <div class="simulation bg-white shadow-sm w-75 mx-auto">
               <div class="headTabs d-flex mb-3">
-                <b-button class="w-100"  :class="{actived:isLoans == 0}" @click="isLoans = 0">Pinjaman Staf</b-button>
-                <b-button class="w-100" :class="{actived:isLoans == 1}" @click="isLoans = 1">Pinjaman Produktif</b-button>
+                <b-button class="w-100"  :class="{actived:isLoans == 0}" @click="isLoans = 0; valueTenure = '140'; valueLoans = '1200000';">Pinjaman Staf</b-button>
+                <b-button class="w-100" :class="{actived:isLoans == 1}" @click="isLoans = 1; valueTenure = '2'; valueLoans = '6000000';">Pinjaman Produktif</b-button>
               </div>
 
               <div class="content-simulation p-4">
@@ -24,31 +24,31 @@
                     <div class="mt-1"><h6 class="f-semiBlack">Jumlah Pinjaman</h6></div>
                     <div class="mt-1 f-green">Rp{{numberFormat(valueLoans)}}</div>
                   </div>
-                  <input class="w-100 slider" type="range" v-model="valueLoans" min="400000" max="4000000">
+                  <input class="w-100 slider" type="range" v-model="valueLoans" :min="isLoans == 0 ? '400000' : '5000000'" :max=" isLoans == 0 ? '4000000' : '10000000'">
                   <div class="d-flex justify-content-between">
-                    <p>Rp400.000</p>
-                    <p>Rp4000.000</p>
+                    <p>Rp{{isLoans == 0 ? '400.000' : '5.000.000'}}</p>
+                    <p>Rp{{isLoans == 0 ? '4.000.000' : '10.000.000'}}</p>
                   </div>
                 </div>
 
-                <div class="mt-4 pt-3 pb-5" style="border-bottom: 1px solid #C8CCDF;">
+                <div class="mt-4 pt-3 pb-4" style="border-bottom: 1px solid #C8CCDF;">
                   <div class=" mb-2 d-flex justify-content-between">
                     <div class="mt-1"><h6 class="f-semiBlack">Tenor</h6></div>
-                    <div class="mt-1 f-green">{{valueTenure}} Hari</div>
+                    <div class="mt-1 f-green">{{valueTenure}} {{isLoans == 0 ? 'Hari' : 'Bulan'}}</div>
                   </div>
                   <input class="w-100 slider" type="range" v-model="valueTenure" min="91" max="180">
                   <div class="d-flex justify-content-between">
-                    <p>91 Hari</p>
-                    <p>180 Hari</p>
+                    <p>{{isLoans == 0 ? '91' : '1'}} {{isLoans == 0 ? 'Hari' : 'Bulan'}}</p>
+                    <p>{{isLoans == 0 ? '180' : '3'}} {{isLoans == 0 ? 'Hari' : 'Bulan'}}</p>
                   </div>
                 </div>
 
                 <div class="text-center mt-4">
                   <h5 class="f-semiBlack">Jumlah yang harus dibayarkan</h5>
-                  <h4 class="f-green">Rp1.288.400</h4>
+                  <h4 class="f-green">Rp{{isLoans == 0 ? '1.288.400' : 'Rp6.220.325'}}</h4>
                 </div>
                 <div class="mt-4 pt-2 ml-md-3">
-                  <b-button variant="warning w-100 py-3">Ajukan Sekarang</b-button>
+                  <b-button variant="warning w-100 py-3" @click="$bvModal.show('bv-modal-requestLoans')">Ajukan Sekarang</b-button>
                 </div>
               </div>
             </div>
@@ -172,6 +172,140 @@
       </b-row>
     </b-container>
   </div>
+
+  <b-modal size="lg" id="bv-modal-requestLoans" hide-footer hide-header>
+    <div class="d-block text-center mb-5">
+      <h3 class="mb-0 f-semiBlack">Ajukan Pinjaman Produktif</h3>
+      <small style="color: #4A4A4A;">Pastikan data pengajuan pinjaman anda benar</small>
+    </div>
+
+      <div v-if="step == 1">
+        <b-form-group
+        id="input-group-1"
+        class="mb-4"
+      >
+      <label for="jumlahPinjamForm">Jumlah Pinjaman <span class="f-gray">(5juta - 10juta Rupiah)</span></label>
+        <b-form-input
+          id="jumlahPinjamForm"
+          type="number"
+          required
+          placeholder="Masukan Jumlah Pinjaman"
+        ></b-form-input>
+      </b-form-group>
+      <b-form-group id="input-group-3" label="Tenor" label-for="input-3" class="mb-4" >
+        <b-form-select
+          id="input-3"
+          v-model="tenor"
+          :options="tenorOption"
+          required
+        ></b-form-select>
+      </b-form-group>
+      <b-form-group id="input-group-3" label="Tanggal Pinjaman Dibutuhkan" label-for="input-3" class="mb-4">
+         <b-form-datepicker id="example-datepicker"></b-form-datepicker>
+      </b-form-group>
+      <b-form-group id="input-group-3" label="Jenis Jaminan" label-for="input-3" class="mb-4">
+        <b-form-select
+          id="input-3"
+          v-model="jaminan"
+          :options="[{text: 'Pilih Jenis Jaminan', value: null}, 'Kendaraan', 'Rumah', 'Tanah']"
+          required
+        ></b-form-select>
+      </b-form-group>
+      </div>
+
+      <div v-if="step == 2">
+        <b-form-group
+        id="input-group-1"
+        class="mb-4"
+      >
+      <label for="jumlahPinjamForm">Nama</label>
+        <b-form-input
+          id="jumlahPinjamForm"
+          required
+          placeholder="Ketik Nama"
+        ></b-form-input>
+      </b-form-group>
+      <b-form-group id="input-group-3" label="Email" label-for="input-3" class="mb-4" >
+        <b-form-input
+          id="jumlahPinjamForm"
+          type="email"
+          required
+          placeholder="Ketik Email"
+        ></b-form-input>
+      </b-form-group>
+      <b-form-group id="input-group-3" label="Nomor KTP" label-for="input-3" class="mb-4" >
+        <b-form-input
+          id="jumlahPinjamForm"
+          type="number"
+          required
+          placeholder="Ketik Nomor KTP"
+        ></b-form-input>
+      </b-form-group>
+      <b-form-group id="input-group-3" label="Tujuan Pinjaman" label-for="input-3" class="mb-4">
+        <b-form-select
+          id="input-3"
+          v-model="jaminan"
+          :options="[{text: 'Pilih Tujuan Pinjaman', value: null}, 'Kendaraan', 'Rumah', 'Tanah']"
+          required
+        ></b-form-select>
+      </b-form-group>
+       <b-form-group id="input-group-3" label="Alamat" label-for="input-3" class="mb-4">
+        <b-form-textarea
+          id="textarea"
+          v-model="text"
+          placeholder="Enter Address"
+          rows="3"
+          max-rows="6"
+        ></b-form-textarea>
+      </b-form-group>
+      <b-form-group id="input-group-3" label="Nomor Telepon" label-for="input-3" class="mb-4" >
+        <b-form-input
+          id="jumlahPinjamForm"
+          type="number"
+          required
+          placeholder="Ketik Nomor Telepon"
+        ></b-form-input>
+      </b-form-group>
+      <b-row>
+        <b-col md="6">
+          <b-form-group id="input-group-3" label="Kode Verifikasi" label-for="input-3" class="mb-4" >
+            <b-form-input
+              id="jumlahPinjamForm"
+              type="number"
+              required
+            ></b-form-input>
+          </b-form-group>
+        </b-col>
+        <b-col md="6 align-self-center">
+            <b-button size="sm" variant="warning py-3 w-100" >Get Verification Code</b-button>
+        </b-col>
+      </b-row>
+      <b-form-group id="input-group-4">
+          <b-form-checkbox value="me">Saya telah membaca dan setuju dengan <a href="#">Privacy Policy</a> dan <a href="#">Term & Conditions</a></b-form-checkbox>
+      </b-form-group>
+      <b-form-group id="input-group-4">
+        <label for="jumlahPinjamForm">Kode Referal <span class="f-gray">(Optional)</span></label>
+          <b-form-input
+            id="jumlahPinjamForm"
+          ></b-form-input>
+      </b-form-group>
+      </div>
+
+    <div class="mt-5 d-flex">
+      <b-button class="ml-auto mr-5 w-50" variant="light" @click="$bvModal.hide('bv-modal-requestLoans')">Batal</b-button>
+      <b-button variant="warning py-3 w-50" @click="step == 1 ? step = 2 : $bvModal.show('bv-modal-thanks'); $bvModal.hide('bv-modal-requestLoans');">{{step == 1 ? 'Lanjut': 'Submit'}}</b-button>
+    </div>
+  </b-modal>
+
+  <b-modal id="bv-modal-thanks" hide-footer hide-header centered>
+    <div class="d-block text-center p-3">
+      <h4 class="mb-4 f-semiBlack">Selamat, Pengajuan Anda Berhasil</h4>
+      <img src="@/assets/img/thanks-icon.png" alt="">
+      <p class="mt-4" style="font-size:12px; color: #4A4A4A;">Terima kasih telah mendaftar sebagai peminjam pinjaman produktif di adapundi, tim pinjaman kami akan segera menghubungi Anda untuk verifikasi dokumen offline.</p>
+        <b-button size="sm" variant="warning py-3 w-50 mt-4" @click="$bvModal.hide('bv-modal-thanks')">OK</b-button>
+    </div>
+  </b-modal>
+
   <Footer/>
 </div>
 </template>
@@ -283,5 +417,8 @@
   background: #10B382;
   cursor: pointer;
     box-shadow: 1px 3px 18px #cec5c5;
+}
+#bv-modal-requestLoans .modal-body{
+  padding: 3rem 8rem;
 }
 </style>

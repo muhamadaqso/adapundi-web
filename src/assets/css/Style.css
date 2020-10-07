@@ -231,7 +231,7 @@ h6 {
 }
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity .6s
+  transition: opacity .2s
 }
 .fade-enter,
 .fade-leave-to{
@@ -286,11 +286,14 @@ h6 {
     line-height: 30px;
 }
 #homePage .story #story-slide .carousel-3d-container .prev span, #homePage .story #story-slide .carousel-3d-container .next span {
-  font-size: 26px;
-    background: white;
-    color: #10B382;
-    padding: 1px 14px;
-    border-radius: 3rem;
+  font-size: 22px;
+  background: white;
+  color: #10B382;
+  font-weight: bold;
+  padding: 1px 13px;
+  border-radius: 3rem;
+  box-shadow: 1px 3px 18px #cec5c5;
+
 }
 #homePage .they-say #say-slide .carousel-3d-container .carousel-3d-slide {
   border-radius: 50%;
@@ -319,3 +322,80 @@ h6 {
     box-shadow: 1px 3px 18px #cec5c5;
 }
 
+/* Responsive Mode */
+@media (max-width: 500px) {
+  #homePage .content-hero ul li, #homePage .content-hero p {
+    font-size: 11px !important;
+    line-height: 28px !important;
+  }
+  #homePage .content-hero h1 {
+    line-height: 31px !important;
+    font-size: 21px !important;
+  }
+  #homePage .activity .row, .gallery .row {
+    flex-wrap: nowrap !important;
+    overflow-x: scroll !important;
+  }
+  a.navbar-brand {
+    padding-left: 0 !important;
+  }
+  .fixed-top #Navgeneral {
+    background-color: #3a996d99;
+  }
+  #homePage .how-to .show-off img {
+    height: auto !important;
+  }
+  .statt .bg-white {
+    margin-top: 10px;
+  }
+  .statt .bg-white p {
+    font-size: 12px !important;
+    line-height: 15px;
+  }
+  .statt .bg-white h2 {
+    font-size: 20px !important;
+  }
+  .statt .bg-white .title img {
+    width: 26px !important;
+    height: 26px !important;
+  }
+  .jumbotron.statt {
+    height: auto !important;
+  }
+  #homePage .story .mt-5 p.content {
+    font-size: 12px !important;
+  }
+  #homePage .they-say {
+    width: 100% !important;
+  }
+  #footer .get-on-play h2 {
+    line-height: 35px !important;
+    font-size: 23px !important;
+  }
+  .footer .footer-logo {
+    text-align: center;
+  }
+  #loansPage .hero-image {
+    height: auto !important;
+  }
+  #loansPage .hero-text {
+    margin-top: 0 !important;
+  }
+  .simulation.w-75 {
+    width: 100% !important;
+  }
+  #bv-modal-requestLoans .modal-body {
+    padding: 1rem !important;
+  }
+  img#profile1, img#profile2 {
+    position: static !important;
+    width: 150px !important;
+    height: 150px !important;
+  }
+  .profile .bg-white.shadow-lg.w-75, .visi-misi .w-75 {
+    width: 100% !important;
+  }
+  .breadcrumb {
+    flex-wrap: nowrap !important;
+  }
+}

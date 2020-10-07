@@ -11,8 +11,11 @@
           <div class="article">
             <div class="d-flex  mb-4">
               <h6 class="f-green">Semua Artikel</h6>
-              <hr style="border-top: 3px solid rgb(16, 179, 130) !important;
+              <hr class="d-md-block d-none" style="border-top: 3px solid rgb(16, 179, 130) !important;
               width: 80%;
+              margin-top: 9px;">
+              <hr class="d-md-none d-block" style="border-top: 3px solid rgb(16, 179, 130) !important;
+              width: 60%;
               margin-top: 9px;">
             </div>
 
@@ -20,7 +23,7 @@
               <b-col md="5">
                 <img class="w-100" :src="arc.img" alt="">
               </b-col>
-              <b-col md="7">
+              <b-col md="7 mt-4 mt-md-0">
                 <div>
                   <h5 class="f-semiBlack">{{arc.title.length > 65 ?  arc.title.substring(0,65)+'...' : arc.title}}</h5>
                   <div class="d-flex mb-2 f-gray">
@@ -38,7 +41,7 @@
           </div>
           </div>
         </b-col>
-        <b-col md="4">
+        <b-col md="4 mt-5 mt-md-0">
           <div class="version">
             <div class="d-flex">
               <h6 class="f-green">Pembaruan Produk</h6>

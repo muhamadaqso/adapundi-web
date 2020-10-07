@@ -36,7 +36,7 @@
                     <div class="mt-1"><h6 class="f-semiBlack">Tenor</h6></div>
                     <div class="mt-1 f-green">{{valueTenure}} {{isLoans == 0 ? 'Hari' : 'Bulan'}}</div>
                   </div>
-                  <input class="w-100 slider" type="range" v-model="valueTenure" min="91" max="180">
+                  <input class="w-100 slider" type="range" v-model="valueTenure" :min=" isLoans == 0 ? '91' : '1'" :max="isLoans == 0 ? '180' : '3'">
                   <div class="d-flex justify-content-between">
                     <p>{{isLoans == 0 ? '91' : '1'}} {{isLoans == 0 ? 'Hari' : 'Bulan'}}</p>
                     <p>{{isLoans == 0 ? '180' : '3'}} {{isLoans == 0 ? 'Hari' : 'Bulan'}}</p>
@@ -45,7 +45,7 @@
 
                 <div class="text-center mt-4">
                   <h5 class="f-semiBlack">Jumlah yang harus dibayarkan</h5>
-                  <h4 class="f-green">Rp{{isLoans == 0 ? '1.288.400' : 'Rp6.220.325'}}</h4>
+                  <h4 class="f-green">Rp{{isLoans == 0 ? '1.288.400' : '6.220.325'}}</h4>
                 </div>
                 <div class="mt-4 pt-2 ml-md-3">
                   <b-button variant="warning w-100 py-3" @click="step = 1; $bvModal.show('bv-modal-requestLoans')">Ajukan Sekarang</b-button>
@@ -138,8 +138,8 @@
   </b-jumbotron>
 
   <div class="diff mb-5">
-    <h3 class="text-center py-5 f-semiBlack">Perbedaan Pinjaman Staf dan Produktif</h3>
     <b-container class="mt-5">
+    <h3 class="text-center py-5 f-semiBlack">Perbedaan Pinjaman Staf dan Produktif</h3>
       <b-row>
         <b-col md="4 ml-auto">
           <img src="@/assets/img/loans-illust2.png" alt="" style="width:inherit;">

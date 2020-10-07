@@ -17,22 +17,21 @@
       <div class="row px-2 px-md-0">
         <div class="col-md-12 gallery-header">
           <h3 class="d-none d-md-block">{{title}}</h3>
-          <h6 class="d-md-none">Photo Gallery</h6>
-          <i @click="$emit('input', false)" >X</i>
+          <i @click="$emit('input', false)" ><b-icon scale="2" icon="x"></b-icon></i>
         </div>
-        <div class="col-md-12 d-md-none mt-4 gallery-header">
+        <div class="col-md-12 mt-4 gallery-header">
           <h3 >{{title}}</h3>
         </div>
       </div>
       <div class="row mt-0 mt-md-0" v-if="galleries.length">
-        <div class="col-xl-12 d-none d-md-block">
+        <div class="col-xl-12 d-md-block">
           <div class="container-slideshow">
-            <button class="prev" @click.stop="onPrev()">&lt;</button>
+            <button class="prev" @click.stop="onPrev()"><b-icon scale="0.8" icon="chevron-left"></b-icon></button>
             <img
               @click.stop="onNext()"
               :src="currentShow"
             />
-            <button class="next" @click.stop="onNext()">&gt;</button>
+            <button class="next" @click.stop="onNext()"><b-icon scale="0.8" icon="chevron-right"></b-icon></button>
           </div>
         </div>
 
@@ -40,7 +39,7 @@
           <div class="gallery-folder" ref="galleries">
             <div class="folder-images">
               <div class="folder-images__container">
-                <span v-for="(img, iImg) in galleries" @click.stop="onClickThumb(iImg);" v-if="windowWidth > 501">
+                <span v-for="(img, iImg) in galleries" @click.stop="onClickThumb(iImg);">
                   <img
                     :class="{'active': iImg == galleryIndex}"
                     :src="img.images"
@@ -195,7 +194,8 @@ Vue.use(VueWindowSize);
     width: 100%;
     min-height: 100%;
     height: 100%;
-    background-color: #1312127a !important;
+    background-color: transparent !important;
+    border-color: transparent !important;
   }
 
   .modal-gallery .modal-body
@@ -208,7 +208,6 @@ Vue.use(VueWindowSize);
     height: 400px;
     overflow: hidden;
     border-radius: 20px;
-    background: rgb(157 158 158 / 47%);
   }
 
   .modal-gallery .container-slideshow img

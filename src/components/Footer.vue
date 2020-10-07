@@ -3,7 +3,7 @@
     <div class="get-on-play" v-if="$route.name !== 'BlogDetail'">
       <img src="@/assets/img/activity-top.png" alt="" style="position:absolute; left:0; top:0;">
       <img src="@/assets/img/activity-bottom.png" alt="" style="position:absolute; right:0; bottom:0;">
-      <b-container class="v2">
+      <b-container class="v2 pb-4 pb-md-0">
         <b-row class="align-items-center h-100">
           <b-col md="6">
             <div>
@@ -11,7 +11,7 @@
             </div>
           </b-col>
           <b-col md="6">
-            <div>
+            <div class="text-center text-md-left">
               <h2 class="f-white mb-4 pb-4">Hadir untuk solusi finansial Anda, unduh aplikasi AdaPundi Sekarang</h2>
               <h5 class="f-white mb-3">Download dan Ajukan Sekarang!</h5>
               <a href="https://play.google.com/store/apps/details?id=com.yinshan.program.banda"><img width="185" src="@/assets/img/gplay.png" alt=""></a>
@@ -80,7 +80,7 @@
                 <a href="https://www.youtube.com/channel/UCz6krbINnDqj1wDIe-_r3CA" class="social"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
             </ul>
         </div>
-        <div class="col-sm-4 text-center">
+        <div class="col-sm-4 text-center my-5 my-md-5">
             <p>Terdaftar dan diawasi oleh:</p>
             <span class="acount-icon">
             <a href="#"><img src="@/assets/img/footer-logo1.png"  width="180" alt=""></a>

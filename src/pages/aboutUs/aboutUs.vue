@@ -16,10 +16,10 @@
 
         <div class="mt-5 bg-white shadow-lg p-4 w-75 mx-auto">
           <b-row>
-            <b-col md="2">
+            <b-col md="2 text-center">
                 <img id="profile1" src="@/assets/img/AI.png" alt="">
             </b-col>
-            <b-col md="8 ml-5">
+            <b-col md="8 ml-md-5 mt-4 mt-md-0">
               <div class="mb-3">
                 <h5 class="f-semiBlack">Achmad Indrawan</h5>
                 <h6 class="f-gray">Direktur PT. Info Tekno Siaga </h6>
@@ -35,7 +35,10 @@
 
         <div class="bg-white shadow-lg p-4 w-75 mx-auto" style="margin-top: 6rem;">
           <b-row>
-            <b-col md="9">
+            <b-col md="2 text-center  d-md-none d-block">
+                <img id="profile2" src="@/assets/img/NN.png" alt="">
+            </b-col>
+            <b-col md="9 mt-4 mt-md-0">
               <div class="mb-3">
                 <h5 class="f-semiBlack">Nova Novianti</h5>
                 <h6 class="f-gray">Komisaris </h6>
@@ -43,7 +46,7 @@
               </div>
               <p class="f-semiBlack">Nova Novianti  adalah President Komisaris AdaPundi. Dia mempunyai pengalaman kerja yang kaya di banyak perusahaan ternama di Indonesia.</p>
             </b-col>
-            <b-col md="2">
+            <b-col md="2 text-center d-md-block d-none">
                 <img id="profile2" src="@/assets/img/NN.png" alt="">
             </b-col>
             <b-col md="12">
@@ -61,7 +64,7 @@
         <h3 class="text-center pt-5 pb-3">Visi Kami</h3>
         <p>Menjadi penyedia solusi keuangan taktis terdepan bagi konsumen Indonesia.</p>
 
-        <div class="mt-4 pt-5 w-75 mx-auto">
+        <div class="mt-4 pt-md-5 pt-0 w-75 mx-auto">
           <h3 class="text-center pt-5 pb-3">Misi Kami</h3>
           <ul>
             <li>Menjunjung tinggi hukum Republik Indonesia & regulasi Otoritas Jasa Keuangan; dan mewujudkannya dalam produk teknologi finansial yang aman, kredibel, transparan, dan mudah digunakan.</li>
@@ -77,7 +80,7 @@
         <h3 class="text-center py-5 f-semiBlack">Gallery AdaPundi</h3>
         <b-container class=" mt-4">
           <b-row>
-            <b-col md="3">
+            <b-col md="3  d-none d-md-block">
               <img class="cursor-pointer" src="@/assets/img/imgAU-1.png" alt="" @click="updateCurrentIndex(0)">
             </b-col>
             <b-col md="9">
@@ -92,7 +95,7 @@
                   <img class="cursor-pointer" src="@/assets/img/imgAU-4.png" alt=""  @click="updateCurrentIndex(3)">
                 </b-col>
               </b-row>
-              <b-row class="mt-3">
+              <b-row class="mt-3  d-none d-md-flex">
                 <b-col class="cursor-pointer" md="4">
                   <img src="@/assets/img/imgAU-5.png" alt=""  @click="updateCurrentIndex(4)">
                 </b-col>
@@ -103,7 +106,10 @@
             </b-col>
           </b-row>
 
-          <div class="mt-5 w-25 d-flex mx-auto">
+          <div class="mt-5 w-25 mx-auto d-none d-md-flex">
+            <b-button block variant="outline-success text-center" @click="seeMoreModal = !seeMoreModal">Lihat Lebih Banyak</b-button>
+          </div>
+          <div class="mt-5 w-100 mx-auto d-flex d-md-none">
             <b-button block variant="outline-success text-center" @click="seeMoreModal = !seeMoreModal">Lihat Lebih Banyak</b-button>
           </div>
         </b-container>

@@ -40,8 +40,8 @@
   </div>
 
   <div class="how-to">
-    <h3 class="text-center py-5 f-green">Cara Pengajuan Pinjaman di AdaPundi</h3>
     <b-container class="v2">
+    <h3 class="text-center py-5 f-green">Cara Pengajuan Pinjaman di AdaPundi</h3>
       <b-row>
         <b-col md="7">
           <div class="show-off">
@@ -53,13 +53,13 @@
             </transition>
           </div>
         </b-col>
-        <b-col md="5 pl-0 mt-4 pt-4">
+        <b-col md="5 pl-md-0 mt-md-4 pt-4">
           <div class="row cursor-pointer" @click="moveStepActive(1)">
-            <div class="col-md-2">
+            <div class="col-md-2 col-2">
               <button type="button" class="px-3 py-2 rounded-circle" :class="{'btn btn-success': stepActive == 1, 'btn btn-outline-secondary': stepActive < 1, 'btn btn-outline-success': stepActive > 1}">1</button>
               <div :class="{'vl-gray': stepActive < 1, 'vl-green': stepActive >= 1}"></div>
             </div>
-            <div class="col-md-10">
+            <div class="col-md-10 col-10">
               <div>
                 <h5 class="f-semiBlack">Download App</h5>
                 <p class="f-gray">Download aplikasi AdaPundi di <br> Google Play.</p>
@@ -67,11 +67,11 @@
             </div>
           </div>
           <div class="row cursor-pointer" @click="moveStepActive(2)">
-            <div class="col-md-2">
+            <div class="col-md-2 col-2">
               <button type="button" class="px-3 py-2 rounded-circle" :class="{'btn btn-success': stepActive == 2, 'btn btn-outline-secondary': stepActive < 2, 'btn btn-outline-success': stepActive > 2}">2</button>
               <div :class="{'vl-gray': stepActive < 2, 'vl-green': stepActive >= 2}"></div>
             </div>
-            <div class="col-md-10">
+            <div class="col-md-10 col-10">
               <div>
                 <h5 class="f-semiBlack">Isi Data</h5>
                 <p class="f-gray">5 menit untuk mengisi data Anda,<br> ikuti petunjuk pada aplikasi kami.</p>
@@ -79,11 +79,11 @@
             </div>
           </div>
           <div class="row cursor-pointer" @click="moveStepActive(3)">
-            <div class="col-md-2">
+            <div class="col-md-2 col-2">
               <button type="button" class="px-3 py-2 rounded-circle" :class="{'btn btn-success': stepActive == 3, 'btn btn-outline-secondary': stepActive < 3, 'btn btn-outline-success': stepActive > 3}">3</button>
               <div :class="{'vl-gray': stepActive < 3, 'vl-green': stepActive >= 3}"></div>
             </div>
-            <div class="col-md-10">
+            <div class="col-md-10 col-10">
               <div>
                 <h5 class="f-semiBlack">Verifikasi</h5>
                 <p class="f-gray">Sistem otomatisasi akan evaluasi dan<br> berikan hasil segera.</p>
@@ -91,10 +91,10 @@
             </div>
           </div>
           <div class="row cursor-pointer" @click="moveStepActive(4)">
-            <div class="col-md-2">
+            <div class="col-md-2 col-2">
               <button type="button" class="px-3 py-2 rounded-circle" :class="{'btn btn-success': stepActive == 4, 'btn btn-outline-secondary': stepActive < 4, 'btn btn-outline-success': stepActive > 4}">4</button>
             </div>
-            <div class="col-md-10">
+            <div class="col-md-10 col-10">
               <div>
                 <h5 class="f-semiBlack">Pencairan Dana</h5>
                 <p class="f-gray">Hanya butuh 5 detik untuk mencairkan dana<br> setelah pengajuan Anda disetujui.</p>
@@ -109,9 +109,9 @@
   <b-jumbotron class="statt img-fluid hero-image" :style="{ backgroundImage: `url(${require('@/assets/img/bg-stat.svg')})` }">
     <b-container class="v2">
       <b-row>
-        <b-col md="3">
-          <div class="bg-white p-4">
-              <div class="d-flex mb-2">
+        <b-col md="3" cols="12">
+          <div class="bg-white p-2 p-md-4">
+              <div class="d-flex mb-2 title">
                 <img width="36" height="36" src="@/assets/img/ic-stat-1.png" alt="">
                 <p class="mb-0 ml-2 align-self-center">Total Unduh</p>
               </div>
@@ -119,9 +119,9 @@
               <img id="bg-down" src="@/assets/img/bg-stat-1.svg" alt="">
           </div>
         </b-col>
-        <b-col md="3">
-          <div class="bg-white p-4">
-              <div class="d-flex mb-2">
+        <b-col md="3" cols="12">
+          <div class="bg-white p-2 p-md-4">
+              <div class="d-flex mb-2 title">
                 <img width="36" height="36" src="@/assets/img/ic-stat-2.png" alt="">
                 <p class="mb-0 ml-2 align-self-center">Total Pengguna</p>
               </div>
@@ -129,9 +129,9 @@
               <img id="bg-down" src="@/assets/img/bg-stat-1.svg" alt="">
           </div>
         </b-col>
-        <b-col md="3">
-          <div class="bg-white p-4">
-              <div class="d-flex mb-2">
+        <b-col md="3" cols="12">
+          <div class="bg-white p-2 p-md-4">
+              <div class="d-flex mb-2 title">
                 <img width="36" height="36" src="@/assets/img/ic-stat-3.png" alt="">
                 <p class="mb-0 ml-2 align-self-center">Total Rating</p>
               </div>
@@ -139,9 +139,9 @@
               <img id="bg-down" src="@/assets/img/bg-stat-1.svg" alt="">
           </div>
         </b-col>
-        <b-col md="3">
-          <div class="bg-white p-4">
-              <div class="d-flex mb-2">
+        <b-col md="3" cols="12">
+          <div class="bg-white p-2 p-md-4">
+              <div class="d-flex mb-2 title">
                 <img width="36" height="36" src="@/assets/img/ic-stat-4.png" alt="">
                 <p class="mb-0 ml-2 align-self-center">Total Komentar</p>
               </div>
@@ -151,10 +151,10 @@
         </b-col>
       </b-row>
 
-      <b-row class="mt-5">
-        <b-col md="3 ml-auto">
-          <div class="bg-white p-4">
-              <div class="d-flex mb-2">
+      <b-row class="mt-md-5">
+        <b-col md="3 ml-auto" cols="12">
+          <div class="bg-white p-2 p-md-4">
+              <div class="d-flex mb-2 title">
                 <img width="36" height="36" src="@/assets/img/ic-stat-5.png" alt="">
                 <p class="mb-0 ml-2 align-self-center">Pinjaman yang Dicairkan</p>
               </div>
@@ -162,9 +162,9 @@
               <img id="bg-down" src="@/assets/img/bg-stat-2.svg" alt="">
           </div>
         </b-col>
-        <b-col md="3">
-          <div class="bg-white p-4">
-              <div class="d-flex mb-2">
+        <b-col md="3" cols="12">
+          <div class="bg-white p-2 p-md-4">
+              <div class="d-flex mb-2 title">
                 <img width="36" height="36" src="@/assets/img/ic-stat-6.png" alt="">
                 <p class="mb-0 ml-2 align-self-center">Pencairan Bulanan</p>
               </div>
@@ -172,9 +172,9 @@
               <img id="bg-down" src="@/assets/img/bg-stat-2.svg" alt="">
           </div>
         </b-col>
-        <b-col md="3 mr-auto">
-          <div class="bg-white py-4 pl-4 pr-0">
-              <div class="d-flex mb-2">
+        <b-col md="3 mr-auto" cols="12">
+          <div class="bg-white py-md-4 pl-md-4 pr-md-0  p-2 ">
+              <div class="d-flex mb-2 title">
                 <img width="36" height="36" src="@/assets/img/ic-stat-7.png" alt="">
                 <p class="mb-0 ml-2 align-self-center">Tingkat Peminjaman Kembali</p>
               </div>
@@ -194,7 +194,7 @@
                     :controls-width="30" :controls-height="30" :clickable="true" :border="0" :width="463" :height="266">
           <slide v-for="(slide, i) in slides" :index="i" v-bind:key="i">
             <figure>
-              <img v-bind:src="slide.img">
+              <iframe width="463" height="266" src="https://www.youtube.com/embed/MM5H4qvrXDs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </figure>
           </slide>
         </carousel-3d>
@@ -213,7 +213,7 @@
     <h3 class="text-center py-5 f-white">Aktifitas Offline AdaPundi</h3>
     <b-container class=" mt-4">
       <b-row>
-        <b-col md="3">
+        <b-col md="3 d-none d-md-block" cols="12">
           <img class="cursor-pointer" src="@/assets/img/img1.png" alt="" @click="updateCurrentIndex(0)">
         </b-col>
         <b-col md="9">
@@ -228,7 +228,7 @@
               <img class="cursor-pointer" src="@/assets/img/img3.png" alt="" @click="updateCurrentIndex(2)">
             </b-col>
           </b-row>
-          <b-row class="mt-3">
+          <b-row class="mt-3 d-none d-md-flex">
             <b-col md="4">
               <img class="cursor-pointer" src="@/assets/img/img4.png" alt="" @click="updateCurrentIndex(3)">
             </b-col>
@@ -239,7 +239,10 @@
         </b-col>
       </b-row>
 
-      <div class="mt-5 w-25 d-flex mx-auto">
+      <div class="mt-5 w-25 mx-auto d-none d-md-flex">
+        <b-button block variant="outline-light text-center" @click="seeMoreModal = !seeMoreModal">Lihat Lebih Banyak</b-button>
+      </div>
+      <div class="mt-5 w-100 mx-auto d-flex d-md-none">
         <b-button block variant="outline-light text-center" @click="seeMoreModal = !seeMoreModal">Lihat Lebih Banyak</b-button>
       </div>
     </b-container>
@@ -305,4 +308,5 @@
 #homePage .how-to p{
   font-family: MontSerrat-Light;
 }
+
 </style>

@@ -18,10 +18,10 @@
         </b-col>
         <b-col md="6">
             <b-row>
-              <b-col md="2 text-center">
+              <b-col md="2 text-center" cols="2">
                 <span>1</span>
               </b-col>
-              <b-col md="10">
+              <b-col md="10" cols="10">
                 <h6>Penerimaan Pengaduan</h6>
                 <p>Setiap pengguna AdaPundi dapat menyampaikan pengaduannya melalui beberapa sarana yang telah kami sediakan baik secara lisan seperti telepon ke hotline kami di 021-50860666 atau mendatangi langsung kantor operasional AdaPundi yang tertera pada halaman website. Selain itu pengguna AdaPundi juga dapat menyampaikan pengaduannya secara lisan melalui Live Chat Aplikasi, Email ke <a style="color:#10B382 !important;" href="mailto:cs@AdaPundi.com">cs@AdaPundi.com</a>, maupun media social kami yaitu Facebook: @AdaPundiOfficial, Instagram: @AdaPundiOfficial, Twitter: @AdaPundi.</p>
               </b-col>
@@ -30,18 +30,21 @@
       </b-row>
 
       <b-row class="align-items-center h-100">
+        <b-col md="6 d-block d-md-none">
+          <img class="w-100" src="@/assets/img/comp2.png" alt="">
+        </b-col>
         <b-col md="6">
             <b-row>
-              <b-col md="2 text-center">
+              <b-col md="2 text-center" cols="2">
                 <span>2</span>
               </b-col>
-              <b-col md="10">
+              <b-col md="10" cols="10">
                 <h6>Penanganan Pengaduan</h6>
                 <p>Setelah pengaduan pelanggan kami terima, tim customer service kami akan memberikan respon dan nomor laporan aduan pelanggan (jika melibatkan divisi internal lainnya) pada hari kerja senin-jumat pukul 08:00 hingga 20:00 dan untuk sabtu-minggu pukul 08:00 hingga 17:00. Tim customer service kami akan memberikan respons selambat-lambatnya 5 hari kerja setelah aduan diterima.</p>
               </b-col>
             </b-row>
         </b-col>
-        <b-col md="6">
+        <b-col md="6 d-none d-md-block">
           <img class="w-100" src="@/assets/img/comp2.png" alt="">
         </b-col>
       </b-row>
@@ -52,10 +55,10 @@
         </b-col>
         <b-col md="6">
             <b-row>
-              <b-col md="2 text-center">
+              <b-col md="2 text-center" cols="2">
                 <span>3</span>
               </b-col>
-              <b-col md="10">
+              <b-col md="10" cols="10">
                 <h6 class="f-semiBlack" style="font-family: MontSerrat-Regular;">Penyelesaian Pengaduan</h6>
                 <p>Tim customer service AdaPundi dapat secara langsung melakukan
                     penyelesaian terhadap aduan Konsumen apabila data dan informasi yang
@@ -68,12 +71,15 @@
       </b-row>
 
       <b-row class="align-items-center h-100">
+        <b-col md="6 d-block d-md-none">
+          <img class="w-100" src="@/assets/img/comp4.png" alt="">
+        </b-col>
         <b-col md="6">
             <b-row>
-              <b-col md="2 text-center">
+              <b-col md="2 text-center" cols="2">
                 <span>4</span>
               </b-col>
-              <b-col md="10">
+              <b-col md="10" cols="10">
                 <h6>Penanganan Pengaduan</h6>
                 <p>AdaPundi secara berkala melakukan Pelaporan Pengaduan
                 Konsumen ke Otoritas Jasa Keuangan sebagai bentuk
@@ -81,7 +87,7 @@
               </b-col>
             </b-row>
         </b-col>
-        <b-col md="6">
+        <b-col md="6 d-none d-md-block">
           <img class="w-100" src="@/assets/img/comp4.png" alt="">
         </b-col>
       </b-row>

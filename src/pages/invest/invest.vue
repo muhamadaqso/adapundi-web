@@ -180,10 +180,10 @@
       <b-row>
         <b-col md="6 px-5">
           <b-row>
-            <b-col md="2 text-center">
+            <b-col md="2 text-center" cols="2">
               <span>1</span>
             </b-col>
-            <b-col md="10">
+            <b-col md="10" cols="10">
               <h6>Perlindungan Hukum</h6>
               <p>Saat ini AdaPundi telah terdaftar di Otoritas jasa Keuangan(OJK) dan merupakan perusahaan teknologi keuangan yang memenuhi standar operasional di Indonesia.</p>
             </b-col>
@@ -191,10 +191,10 @@
         </b-col>
         <b-col md="6 px-5">
           <b-row>
-            <b-col md="2 text-center">
+            <b-col md="2 text-center" cols="2">
               <span>2</span>
             </b-col>
-            <b-col md="10">
+            <b-col md="10" cols="10">
               <h6>Kekuatan Teknis yang Termuka</h6>
               <p>Mode kontrol Big Data dan sistem anti-penipuan untuk melindungi pendanaan anda.</p>
             </b-col>
@@ -202,10 +202,10 @@
         </b-col>
         <b-col md="6 px-5 mt-4">
           <b-row>
-            <b-col md="2 text-center">
+            <b-col md="2 text-center" cols="2">
               <span>3</span>
             </b-col>
-            <b-col md="10">
+            <b-col md="10" cols="10">
               <h6>Keuntungan Besar</h6>
               <p>Suku bunga tahunan mencapai 14% untuk memberikan pengembalian terhadap pembiayaan anda.</p>
             </b-col>
@@ -213,10 +213,10 @@
         </b-col>
         <b-col md="6 px-5 mt-4">
           <b-row>
-            <b-col md="2 text-center">
+            <b-col md="2 text-center" cols="2">
               <span>4</span>
             </b-col>
-            <b-col md="10">
+            <b-col md="10" cols="10">
               <h6>Partisipasi dalam Membangun Ekonomi</h6>
               <p>Pembiayaan akan diberikan kepada pengusaha kecil di Indonesia untuk membantu mengembangkan ekonomi.</p>
             </b-col>

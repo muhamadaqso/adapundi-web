@@ -69,7 +69,7 @@
             </b-row>
 
             <div class="mt-5 w-75 d-flex mx-auto">
-            <b-button block variant="outline-success text-center">Lihat Lebih Banyak</b-button>
+            <b-button @click="$router.push('/blog')" block variant="outline-success text-center">Lihat Lebih Banyak</b-button>
           </div>
           </div>
         </b-col>

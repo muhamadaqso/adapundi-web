@@ -46,10 +46,10 @@
         <b-col md="7">
           <div class="show-off">
             <transition name="fade"  mode="out-in">
-              <img key="1" v-if="stepActive === 1" src="@/assets/img/how-1.svg" alt="" class="w-100" style="height: -webkit-fill-available;">
-              <img key="2" v-if="stepActive === 2" src="@/assets/img/how-2.svg" alt="" class="w-100" style="height: -webkit-fill-available;">
-              <img key="3" v-if="stepActive === 3" src="@/assets/img/how-3.svg" alt="" class="w-100" style="height: -webkit-fill-available;">
-              <img key="4" v-if="stepActive === 4" src="@/assets/img/how-4.svg" alt="" class="w-100" style="height: -webkit-fill-available;">
+              <img key="1" v-if="stepActive === 1" src="@/assets/img/how-1.svg" alt="Download App img (your connection down)" class="w-100" style="height: -webkit-fill-available;">
+              <img key="2" v-if="stepActive === 2" src="@/assets/img/how-2.svg" alt="Isi Data img (your connection down)" class="w-100" style="height: -webkit-fill-available;">
+              <img key="3" v-if="stepActive === 3" src="@/assets/img/how-3.svg" alt="Verifikasi img (your connection down)" class="w-100" style="height: -webkit-fill-available;">
+              <img key="4" v-if="stepActive === 4" src="@/assets/img/how-4.svg" alt="Pencairan Dana img (your connection down)" class="w-100" style="height: -webkit-fill-available;">
             </transition>
           </div>
         </b-col>
@@ -190,9 +190,9 @@
     <h3 class="text-center py-5 f-green">Cerita tentang AdaPundi</h3>
     <b-container class="v2">
       <div id="story-slide">
-        <carousel-3d :controls-visible="true" :controls-prev-html="'&#10092;'" :controls-next-html="'&#10093;'" :space="350"
+        <carousel-3d :controls-visible="false" :controls-prev-html="'&#10092;'" :controls-next-html="'&#10093;'" :space="350"
                     :controls-width="30" :controls-height="30" :clickable="true" :border="0" :width="463" :height="266">
-          <slide v-for="(slide, i) in slides" :index="i" v-bind:key="i">
+          <slide v-for="(slide, i) in 1" :index="i" v-bind:key="i">
             <figure>
               <iframe width="463" height="266" src="https://www.youtube.com/embed/MM5H4qvrXDs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </figure>
@@ -211,26 +211,26 @@
     <img src="@/assets/img/activity-top.png" alt="" style="position:absolute; left:0; top:0;">
     <img src="@/assets/img/activity-bottom.png" alt="" style="position:absolute; right:0; bottom:0;">
     <h3 class="text-center py-5 f-white">Aktifitas Offline AdaPundi</h3>
-    <b-container class=" mt-4">
+    <b-container class=" mt-4 mb-3">
       <b-row>
         <b-col md="3 d-none d-md-block" cols="12">
           <img class="cursor-pointer" src="@/assets/img/img1.png" alt="" @click="updateCurrentIndex(0)">
         </b-col>
         <b-col md="9">
           <b-row>
-            <b-col md="4">
-              <img class="cursor-pointer" src="@/assets/img/img3.png" alt="" @click="updateCurrentIndex(2)">
+            <b-col md="4 pr-0">
+              <img class="cursor-pointer" src="@/assets/img/img5.jpg" alt="" @click="updateCurrentIndex(4)">
             </b-col>
             <b-col md="4">
               <img class="cursor-pointer" src="@/assets/img/img4.png" alt="" @click="updateCurrentIndex(3)">
             </b-col>
             <b-col md="4">
-              <img class="cursor-pointer" src="@/assets/img/img3.png" alt="" @click="updateCurrentIndex(2)">
+              <img class="cursor-pointer" src="@/assets/img/img6.jpg" alt="" @click="updateCurrentIndex(5)">
             </b-col>
           </b-row>
           <b-row class="mt-3 d-none d-md-flex">
             <b-col md="4">
-              <img class="cursor-pointer" src="@/assets/img/img4.png" alt="" @click="updateCurrentIndex(3)">
+              <img class="cursor-pointer" src="@/assets/img/img3.png" alt="" @click="updateCurrentIndex(2)">
             </b-col>
             <b-col md="8">
               <img class="cursor-pointer" src="@/assets/img/img2.png" alt="" @click="updateCurrentIndex(1)">
@@ -239,12 +239,12 @@
         </b-col>
       </b-row>
 
-      <div class="mt-5 w-25 mx-auto d-none d-md-flex">
+      <!-- <div class="mt-5 w-25 mx-auto d-none d-md-flex">
         <b-button block variant="outline-light text-center" @click="seeMoreModal = !seeMoreModal">Lihat Lebih Banyak</b-button>
       </div>
       <div class="mt-5 w-100 mx-auto d-flex d-md-none">
         <b-button block variant="outline-light text-center" @click="seeMoreModal = !seeMoreModal">Lihat Lebih Banyak</b-button>
-      </div>
+      </div> -->
     </b-container>
   </div>
   <modal-gallery v-model="seeMoreModal" :galleries="gallery" :title="'Aktifitas Offline'" :index="currentGalleryIndex"></modal-gallery>
@@ -281,7 +281,10 @@
     <h3 class="text-center pt-5 f-semiBlack">Mitra Kami</h3>
     <div class="my-5">
       <b-container>
-        <div id="partner-slide">
+        <b-row>
+          <b-col md="4 text-center mb-3" v-for="(slide, i) in slidesMitra" :index="i" v-bind:key="i"><img class="p-3" v-bind:src="slide.img"/></b-col>
+        </b-row>
+        <!-- <div id="partner-slide">
           <carousel-3d :perspective="0" :disable3d="true" :space="185" :border="0" :width="149" :height="80" :clickable="false" :controls-visible="true">
             <slide v-for="(slide, i) in slidesMitra" :index="i" v-bind:key="i">
               <figure>
@@ -289,7 +292,7 @@
               </figure>
             </slide>
           </carousel-3d>
-        </div>
+        </div> -->
       </b-container>
     </div>
   </div>
@@ -307,6 +310,12 @@
 }
 #homePage .how-to p{
   font-family: MontSerrat-Light;
+}
+.activity .row img {
+  width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 7px;
 }
 
 </style>

@@ -4,7 +4,7 @@
         <b-container class="v2">
             <b-navbar-brand href="#" @click="$router.push({name:'Home'})">
                 <img src="@/assets/img/logo.png" alt="Kitten" width="52" height="52">
-                AdaPundi
+                <img src="@/assets/img/adapundi-word.png" class="ml-2" alt="Kitten" width="99" height="23">
             </b-navbar-brand>
 
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -13,12 +13,13 @@
 
                 <!-- Right aligned nav items -->
                 <b-navbar-nav class="ml-auto">
+                    <b-nav-item href="#" class="mx-auto" @click="$router.push({name:'Home'})" :class="{activeNav: $route.name == 'Home'}">Home</b-nav-item>
                     <b-nav-item href="#" class="mx-auto" @click="$router.push({name:'Loans'})" :class="{activeNav: $route.name == 'Loans'}">Pinjaman</b-nav-item>
                     <b-nav-item href="#" class="mx-auto" @click="$router.push({name:'Invest'})" :class="{activeNav: $route.name == 'Invest'}">Investasi</b-nav-item>
                     <b-nav-item href="#" class="mx-auto" @click="$router.push({name:'AboutUs'})" :class="{activeNav: $route.name == 'AboutUs'}">Tentang Kami</b-nav-item>
                     <b-nav-item href="#" class="mx-auto" @click="$router.push({name:'Blog'})" :class="{activeNav: $route.name == 'Blog' || $route.name == 'BlogDetail'}">Blog</b-nav-item>
                     <b-nav-item href="#" class="mx-auto" @click="$router.push({name:'Complaints'})" :class="{activeNav: $route.name == 'Complaints'}">Layanan Pengaduan</b-nav-item>
-                    <b-nav-item href="#" class="mx-auto">FAQ</b-nav-item>
+                    <b-nav-item href="https://www.adapundi.com/#/help" class="mx-auto">FAQ</b-nav-item>
                     <b-nav-item href="#" class="mx-auto"><button class="round btn" type="button" id="buttonTKB">TKB90=98.82%</button></b-nav-item>
                 </b-navbar-nav>
             </b-collapse>
@@ -82,7 +83,7 @@ export default {
 .fixed-top .shadow-sm.bg-white .nav-item a, .fixed-top .shadow-sm.bg-white a.navbar-brand {
   color: black !important;
 }
- .nav-item.activeNav a {
+.nav-item.activeNav a, .fixed-top .shadow-sm.bg-white .nav-item.activeNav a{
    color: #10B382 !important;
  }
  .nav-item a {

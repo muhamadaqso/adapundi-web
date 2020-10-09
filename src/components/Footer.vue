@@ -6,7 +6,7 @@
       <b-container class="v2 pb-4 pb-md-0">
         <b-row class="align-items-center h-100">
           <b-col md="6">
-            <div>
+            <div class="mx-auto" style="width:65%">
               <img class="w-100" src="@/assets/img/gadget-footer.png" alt="">
             </div>
           </b-col>
@@ -28,7 +28,10 @@
           <hr>
         </b-col>
         <b-col md="2 px-0">
-          <div class="footer-logo"><img src="@/assets/img/logo.png" alt="Kitten" width="74" height="74"> AdaPundi</div>
+          <div class="footer-logo">
+                <img src="@/assets/img/logo.png" alt="Kitten" width="74" height="74">
+                <img src="@/assets/img/adapundi-word.png" class="ml-1" alt="Kitten" width="99" height="23">
+          </div>
         </b-col>
         <b-col md="5  align-self-center">
           <hr>
@@ -85,7 +88,24 @@
             <span class="acount-icon">
             <a href="#"><img src="@/assets/img/footer-logo1.png"  width="180" alt=""></a>
             <a href="#"><img src="@/assets/img/footer-logo2.png" width="200" class="my-3" alt=""></a>
-            <a href="#"><img src="@/assets/img/tuv-icon.jpeg" width="200" alt=""></a>
+            <a href="#">
+              <div class="d-flex">
+                  <a href="#" class="ml-auto"><img src="@/assets/img/tuv-logo.png"  width="80" alt=""></a>
+                  <div class="mx-2 text-left">
+                    <p style="font-size: 9px;
+                    line-height: 15px;
+                    color: #e2dfdf;">
+                    Management <br>
+                    System<br>
+                    ISO/IEC 27001:2013</p>
+                    <p style="font-size: 9px;
+                    line-height: 15px;
+                    color: #e2dfdf;">www.tuv.com<br>
+                    ID  9108658757</p>
+                  </div>
+                  <a href="#" class="mr-auto"><img src="@/assets/img/QR-code.png"  width="80" alt=""></a>
+              </div>
+            </a>
             </span>
         </div>
         <div class="col-sm-4">

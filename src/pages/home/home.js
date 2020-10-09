@@ -24,6 +24,8 @@ export default {
         {images: require('@/assets/img/img2.png')},
         {images: require('@/assets/img/img3.png')},
         {images: require('@/assets/img/img4.png')},
+        {images: require('@/assets/img/img5.jpg')},
+        {images: require('@/assets/img/img6.jpg')},
       ],
       contSay : 0,
       slidesMitra: [

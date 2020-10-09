@@ -19,7 +19,7 @@
             <b-col md="2 text-center">
                 <img id="profile1" src="@/assets/img/AI.png" alt="">
             </b-col>
-            <b-col md="8 ml-md-5 mt-4 mt-md-0">
+            <b-col md="8 ml-md-4 mt-4 mt-md-0">
               <div class="mb-3">
                 <h5 class="f-semiBlack">Achmad Indrawan</h5>
                 <h6 class="f-gray">Direktur PT. Info Tekno Siaga </h6>
@@ -106,15 +106,15 @@
             </b-col>
           </b-row>
 
-          <div class="mt-5 w-25 mx-auto d-none d-md-flex">
+          <!-- <div class="mt-5 w-25 mx-auto d-none d-md-flex">
             <b-button block variant="outline-success text-center" @click="seeMoreModal = !seeMoreModal">Lihat Lebih Banyak</b-button>
           </div>
           <div class="mt-5 w-100 mx-auto d-flex d-md-none">
             <b-button block variant="outline-success text-center" @click="seeMoreModal = !seeMoreModal">Lihat Lebih Banyak</b-button>
-          </div>
+          </div> -->
         </b-container>
       </div>
-  <modal-gallery v-model="seeMoreModal" :galleries="gallery" :title="'Aktifitas Offline'" :index="currentGalleryIndex"></modal-gallery>
+  <modal-gallery v-model="seeMoreModal" :galleries="gallery" :title="'Gallery Adapundi'" :index="currentGalleryIndex"></modal-gallery>
 
     <Footer/>
   </div>
@@ -160,8 +160,8 @@
  }
 img#profile1 {
     position: absolute;
-    width: 200px;
-    height: 200px;
+    width: 140px;
+    height: 140px;
     left: -20%;
     top: -35%;
     border-radius: 50%;
@@ -170,8 +170,8 @@ img#profile1 {
 }
 img#profile2 {
     position: absolute;
-    width: 200px;
-    height: 200px;
+    width: 140px;
+    height: 140px;
     right: -75%;
     top: -35%;
     border-radius: 50%;

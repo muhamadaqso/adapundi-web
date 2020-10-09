@@ -14,8 +14,8 @@
           <b-col md="6" style="position:relative;">
             <div class="simulation bg-white shadow-sm w-75 mx-auto">
               <div class="headTabs d-flex mb-3">
-                <b-button class="w-100"  :class="{actived:isLoans == 0}" @click="isLoans = 0; valueTenure = '140'; valueLoans = '1200000';">Pinjaman Staf</b-button>
-                <b-button class="w-100" :class="{actived:isLoans == 1}" @click="isLoans = 1; valueTenure = '2'; valueLoans = '6000000';">Pinjaman Produktif</b-button>
+                <b-button class="w-100"  :class="{actived:isLoans == 0}" @click="isLoans = 0; valueTenure = '140'; valueLoans = '1200000'; backgroundSize = (1200000-400000)*100/ (4000000-400000)+ '% 100%';backgroundSize2 = (this.valueTenure-91)*100/ (180-91) + '% 100%'; ">Pinjaman Staff</b-button>
+                <b-button class="w-100" :class="{actived:isLoans == 1}" @click="isLoans = 1; valueTenure = '2'; valueLoans = '6000000'; backgroundSize = (6000000-5000000)*100/ (10000000-5000000)+ '% 100%';backgroundSize2 = (this.valueTenure-1)*100/ (3-1) + '% 100%';">Pinjaman Produktif</b-button>
               </div>
 
               <div class="content-simulation p-4">
@@ -24,7 +24,7 @@
                     <div class="mt-1"><h6 class="f-semiBlack">Jumlah Pinjaman</h6></div>
                     <div class="mt-1 f-green">Rp{{numberFormat(valueLoans)}}</div>
                   </div>
-                  <input class="w-100 slider" type="range" v-model="valueLoans" :min="isLoans == 0 ? '400000' : '5000000'" :max=" isLoans == 0 ? '4000000' : '10000000'">
+                  <input class="w-100 slider" @input="updateSlider" :style="{backgroundSize: backgroundSize}" type="range" v-model="valueLoans" :min="isLoans == 0 ? '400000' : '5000000'" :max=" isLoans == 0 ? '4000000' : '10000000'">
                   <div class="d-flex justify-content-between">
                     <p>Rp{{isLoans == 0 ? '400.000' : '5.000.000'}}</p>
                     <p>Rp{{isLoans == 0 ? '4.000.000' : '10.000.000'}}</p>
@@ -36,7 +36,7 @@
                     <div class="mt-1"><h6 class="f-semiBlack">Tenor</h6></div>
                     <div class="mt-1 f-green">{{valueTenure}} {{isLoans == 0 ? 'Hari' : 'Bulan'}}</div>
                   </div>
-                  <input class="w-100 slider" type="range" v-model="valueTenure" :min=" isLoans == 0 ? '91' : '1'" :max="isLoans == 0 ? '180' : '3'">
+                  <input class="w-100 slider" @input="updateSliderTwo" :style="{backgroundSize: backgroundSize2}"  type="range" v-model="valueTenure" :min=" isLoans == 0 ? '91' : '1'" :max="isLoans == 0 ? '180' : '3'">
                   <div class="d-flex justify-content-between">
                     <p>{{isLoans == 0 ? '91' : '1'}} {{isLoans == 0 ? 'Hari' : 'Bulan'}}</p>
                     <p>{{isLoans == 0 ? '180' : '3'}} {{isLoans == 0 ? 'Hari' : 'Bulan'}}</p>
@@ -45,10 +45,10 @@
 
                 <div class="text-center mt-4">
                   <h5 class="f-semiBlack">Jumlah yang harus dibayarkan</h5>
-                  <h4 class="f-green">Rp{{isLoans == 0 ? '1.288.400' : '6.220.325'}}</h4>
+                  <h4 class="f-green">Rp{{isLoans == 0 ? numberFormat((valueLoans*valueTenure*0.01137257).toFixed(0)) : numberFormat((valueLoans*(valueTenure*30)*0.00648112).toFixed(0))}}</h4>
                 </div>
                 <div class="mt-4 pt-2 ml-md-3">
-                  <b-button variant="warning w-100 py-3" @click="step = 1; $bvModal.show('bv-modal-requestLoans')">Ajukan Sekarang</b-button>
+                  <b-button variant="warning w-100 py-3" @click="isLoans == 0 ? goTo('https://play.google.com/store/apps/details?id=com.yinshan.program.banda&hl=es_PA') : step = 1; $bvModal.show('bv-modal-requestLoans')">Ajukan Sekarang</b-button>
                 </div>
               </div>
             </div>
@@ -185,12 +185,12 @@
         class="mb-4"
       >
       <label for="jumlahPinjamForm">Jumlah Pinjaman <span class="f-gray">(5juta - 10juta Rupiah)</span></label>
-        <b-form-input
-          id="jumlahPinjamForm"
-          type="number"
+        <b-form-select
+          id="input-3"
+          v-model="loanValue"
+          :options="[{text: 'Masukan Jumlah Pinjaman', value: null}, '5Juta', '6Juta', '7Juta', '8Juta', '9Juta', '10Juta']"
           required
-          placeholder="Masukan Jumlah Pinjaman"
-        ></b-form-input>
+        ></b-form-select>
       </b-form-group>
       <b-form-group id="input-group-3" label="Tenor" label-for="input-3" class="mb-4" >
         <b-form-select
@@ -201,7 +201,7 @@
         ></b-form-select>
       </b-form-group>
       <b-form-group id="input-group-3" label="Tanggal Pinjaman Dibutuhkan" label-for="input-3" class="mb-4">
-         <b-form-datepicker id="example-datepicker"></b-form-datepicker>
+         <b-form-datepicker v-model="date" id="example-datepicker"></b-form-datepicker>
       </b-form-group>
       <b-form-group id="input-group-3" label="Jenis Jaminan" label-for="input-3" class="mb-4">
         <b-form-select
@@ -221,6 +221,7 @@
       <label for="jumlahPinjamForm">Nama</label>
         <b-form-input
           id="jumlahPinjamForm"
+          v-model="form.name"
           required
           placeholder="Ketik Nama"
         ></b-form-input>
@@ -229,6 +230,7 @@
         <b-form-input
           id="jumlahPinjamForm"
           type="email"
+          v-model="form.email"
           required
           placeholder="Ketik Email"
         ></b-form-input>
@@ -237,6 +239,7 @@
         <b-form-input
           id="jumlahPinjamForm"
           type="number"
+          v-model="form.ktpId"
           required
           placeholder="Ketik Nomor KTP"
         ></b-form-input>
@@ -244,7 +247,7 @@
       <b-form-group id="input-group-3" label="Tujuan Pinjaman" label-for="input-3" class="mb-4">
         <b-form-select
           id="input-3"
-          v-model="jaminan"
+          v-model="form.jaminan"
           :options="[{text: 'Pilih Tujuan Pinjaman', value: null}, 'Kendaraan', 'Rumah', 'Tanah']"
           required
         ></b-form-select>
@@ -252,7 +255,7 @@
        <b-form-group id="input-group-3" label="Alamat" label-for="input-3" class="mb-4">
         <b-form-textarea
           id="textarea"
-          v-model="text"
+          v-model="form.address"
           placeholder="Enter Address"
           rows="3"
           max-rows="6"
@@ -262,6 +265,7 @@
         <b-form-input
           id="jumlahPinjamForm"
           type="number"
+          v-model="form.tlp"
           required
           placeholder="Ketik Nomor Telepon"
         ></b-form-input>
@@ -272,16 +276,18 @@
             <b-form-input
               id="jumlahPinjamForm"
               type="number"
+              v-model="form.verificationCode"
               required
             ></b-form-input>
           </b-form-group>
         </b-col>
         <b-col md="6 align-self-center">
-            <b-button size="sm" variant="warning py-3 w-100" >Get Verification Code</b-button>
+            <b-button size="sm" variant="warning py-3 w-100" >Dapatkan kode verifikasi</b-button>
         </b-col>
       </b-row>
       <b-form-group id="input-group-4">
-          <b-form-checkbox value="me">Saya telah membaca dan setuju dengan <a href="#">Privacy Policy</a> dan <a href="#">Term & Conditions</a></b-form-checkbox>
+          <b-form-checkbox v-model="form.isRead" value="true"
+      unchecked-value="false">Saya telah membaca dan setuju dengan <a href="#">Privacy Policy</a> dan <a href="#">Term & Conditions</a></b-form-checkbox>
       </b-form-group>
       <b-form-group id="input-group-4">
         <label for="jumlahPinjamForm">Kode Referal <span class="f-gray">(Optional)</span></label>
@@ -293,7 +299,7 @@
 
     <div class="mt-5 d-flex">
       <b-button class="ml-auto mr-5 w-50" variant="light" @click="step == 1 ? $bvModal.hide('bv-modal-requestLoans') : step = 1 ">{{step == 1 ? 'Batal': 'Kembali'}}</b-button>
-      <b-button variant="warning py-3 w-50" @click="step == 1 ? step = 2 : toThanks();">{{step == 1 ? 'Lanjut': 'Submit'}}</b-button>
+      <b-button variant="warning py-3 w-50" :disabled="step == 1 ? (loanValue == null || tenor == null || jaminan == null || date == '') : form.isRead == false" @click="step == 1 ? step = 2 : toThanks();">{{step == 1 ? 'Lanjut': 'Kirimkan'}}</b-button>
     </div>
   </b-modal>
 
@@ -387,37 +393,104 @@
   font-family: MontSerrat-Regular;
   font-size: 14px;
 }
-.slider {
-  -webkit-appearance: none;
+/* Slider CSS */
+input.slider[type=range] {
+    -webkit-appearance: none;
+    display: block;
+    width: 100%;
+    margin: 16px 0;
+    background: #bcbcbd;
+    background-image: -webkit-gradient(linear, 20% 0%, 20% 100%, color-stop(0%, #10B382), color-stop(100%, #10B382));
+    background-image: -webkit-linear-gradient(left, #10B382 0%,#10B382 100%);
+    background-image: -moz-linear-gradient(left, #10B382 0%, #10B382 100%);
+    background-image: -o-linear-gradient(to right, #10B382 0%,#10B382 100%);
+    background-image: linear-gradient(to right, #10B382 0%,#10B382 100%);
+    background-repeat: no-repeat;
+    border-radius: 1rem;
+}
+input.slider[type=range]:focus {
+  outline: none;
+}
+input.slider[type=range]::-webkit-slider-runnable-track {
   width: 100%;
   height: 6px;
-  background: #10B382;
-  outline: none;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-  border-radius: 1rem;
+  cursor: pointer;
+  box-shadow: none;
+  background: transparent;
+  border-radius: 0px;
+  border: none;
 }
-.slider::-webkit-slider-thumb {
+input.slider[type=range]::-webkit-slider-thumb {
+  box-shadow: none;
+  border: 4px solid #fff;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #10B382;
+  cursor: pointer;
   -webkit-appearance: none;
-  appearance: none;
+  margin-top: -6px;
+  box-shadow: 1px 3px 18px #cec5c5;
+}
+input.slider[type=range]:focus::-webkit-slider-runnable-track {
+  background: transparent;
+}
+input.slider[type=range]::-moz-range-track {
+  width: 100%;
+  height: 6px;
+  cursor: pointer;
+  box-shadow: none;
+  background: transparent;
+  border-radius: 0px;
+  border: none;
+}
+input.slider[type=range]::-moz-range-thumb {
+  box-shadow: none;
+  border: 4px solid #fff;
+  height: 20px;
   width: 20px;
   border-radius: 50%;
-  height: 20px;
-  border: 3px solid #fff;
   background: #10B382;
   cursor: pointer;
-    box-shadow: 1px 3px 18px #cec5c5;
+  box-shadow: 1px 3px 18px #cec5c5;
 }
-
-.slider::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 3px solid #fff;
-  background: #10B382;
+input.slider[type=range]::-ms-track {
+  width: 100%;
+  height: 4px;
   cursor: pointer;
-    box-shadow: 1px 3px 18px #cec5c5;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
 }
+input.slider[type=range]::-ms-fill-lower {
+  background: transparent;
+  border: none;
+  border-radius: 0px;
+  box-shadow: none;
+}
+input.slider[type=range]::-ms-fill-upper {
+  background: transparent;
+  border: none;
+  border-radius: 0px;
+  box-shadow: none;
+}
+input.slider[type=range]::-ms-thumb {
+  box-shadow: none;
+  border: 4px solid #10B382;
+  height: 16px;
+  width: 16px;
+  border-radius: 2px;
+  background: #ffffff;
+  cursor: pointer;
+  height: 4px;
+}
+input.slider[type=range]:focus::-ms-fill-lower {
+  background: transparent;
+}
+input.slider[type=range]:focus::-ms-fill-upper {
+  background: transparent;
+}
+/* End Range Slider */
 #bv-modal-requestLoans .modal-body{
   padding: 3rem 8rem;
 }

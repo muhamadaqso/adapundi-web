@@ -12,11 +12,11 @@ export default {
       items: [
         {
           text: 'Home',
-          href: '#'
+          href: '/'
         },
         {
           text: 'Blog',
-          href: '#'
+          href: '/blog'
         },
         {
           text: 'Berdiskusi tentang industri keuangan di Universitas Negeri Gorontalo',

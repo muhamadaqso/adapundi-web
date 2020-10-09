@@ -28,7 +28,7 @@
                     <div class="mt-1"><h6 class="f-semiBlack">Jumlah Investasi</h6></div>
                     <div class="mt-1 f-green">Rp{{numberFormat(valueLoans)}}</div>
                   </div>
-                  <input class="w-100 slider" type="range" v-model="valueLoans" min="400000" max="4000000">
+                  <input class="w-100 slider" @input="updateSlider" :style="{backgroundSize: backgroundSize}" type="range" v-model="valueLoans" min="400000" max="4000000">
                   <div class="d-flex justify-content-between">
                     <p>Rp400.000</p>
                     <p>Rp4000.000</p>
@@ -40,7 +40,7 @@
                     <div class="mt-1"><h6 class="f-semiBlack">Tenor</h6></div>
                     <div class="mt-1 f-green">{{valueTenure}} Hari</div>
                   </div>
-                  <input class="w-100 slider" type="range" v-model="valueTenure" min="91" max="180">
+                  <input class="w-100 slider" @input="updateSliderTwo" :style="{backgroundSize: backgroundSize2}" type="range" v-model="valueTenure" min="91" max="180">
                   <div class="d-flex justify-content-between">
                     <p>91 Hari</p>
                     <p>180 Hari</p>
@@ -57,12 +57,12 @@
                   <b-col md="6">
                     <div class="text-left mt-4">
                       <h6 style="font-size: 14px;" class="f-semiBlack">Proyeksi Imbal Hasil</h6>
-                      <h4 class="f-green">Rp1.297.520</h4>
+                      <h4 class="f-green">Rp{{numberFormat((valueLoans*valueTenure*0.01137257).toFixed(0))}}</h4>
                     </div>
                   </b-col>
                 </b-row>
                 <div class="mt-4 pt-2 ml-md-3">
-                  <b-button variant="warning w-100 py-3">Ajukan Sekarang</b-button>
+                  <b-button href="https://play.google.com/store/apps/details?id=com.yinshan.program.banda&hl=es_PA" target="_blank" variant="warning w-100 py-3">Ajukan Sekarang</b-button>
                 </div>
               </div>
             </div>
@@ -304,37 +304,104 @@
   font-family: MontSerrat-Regular;
   font-size: 14px;
 }
-.slider {
-  -webkit-appearance: none;
+/* Slider CSS */
+input.slider[type=range] {
+    -webkit-appearance: none;
+    display: block;
+    width: 100%;
+    margin: 16px 0;
+    background: #bcbcbd;
+    background-image: -webkit-gradient(linear, 20% 0%, 20% 100%, color-stop(0%, #10B382), color-stop(100%, #10B382));
+    background-image: -webkit-linear-gradient(left, #10B382 0%,#10B382 100%);
+    background-image: -moz-linear-gradient(left, #10B382 0%, #10B382 100%);
+    background-image: -o-linear-gradient(to right, #10B382 0%,#10B382 100%);
+    background-image: linear-gradient(to right, #10B382 0%,#10B382 100%);
+    background-repeat: no-repeat;
+    border-radius: 1rem;
+}
+input.slider[type=range]:focus {
+  outline: none;
+}
+input.slider[type=range]::-webkit-slider-runnable-track {
   width: 100%;
   height: 6px;
-  background: #10B382;
-  outline: none;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-  border-radius: 1rem;
+  cursor: pointer;
+  box-shadow: none;
+  background: transparent;
+  border-radius: 0px;
+  border: none;
 }
-.slider::-webkit-slider-thumb {
+input.slider[type=range]::-webkit-slider-thumb {
+  box-shadow: none;
+  border: 4px solid #fff;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #10B382;
+  cursor: pointer;
   -webkit-appearance: none;
-  appearance: none;
+  margin-top: -6px;
+  box-shadow: 1px 3px 18px #cec5c5;
+}
+input.slider[type=range]:focus::-webkit-slider-runnable-track {
+  background: transparent;
+}
+input.slider[type=range]::-moz-range-track {
+  width: 100%;
+  height: 6px;
+  cursor: pointer;
+  box-shadow: none;
+  background: transparent;
+  border-radius: 0px;
+  border: none;
+}
+input.slider[type=range]::-moz-range-thumb {
+  box-shadow: none;
+  border: 4px solid #fff;
+  height: 20px;
   width: 20px;
   border-radius: 50%;
-  height: 20px;
-  border: 3px solid #fff;
   background: #10B382;
   cursor: pointer;
-    box-shadow: 1px 3px 18px #cec5c5;
+  box-shadow: 1px 3px 18px #cec5c5;
 }
-
-.slider::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 3px solid #fff;
-  background: #10B382;
+input.slider[type=range]::-ms-track {
+  width: 100%;
+  height: 4px;
   cursor: pointer;
-    box-shadow: 1px 3px 18px #cec5c5;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
 }
+input.slider[type=range]::-ms-fill-lower {
+  background: transparent;
+  border: none;
+  border-radius: 0px;
+  box-shadow: none;
+}
+input.slider[type=range]::-ms-fill-upper {
+  background: transparent;
+  border: none;
+  border-radius: 0px;
+  box-shadow: none;
+}
+input.slider[type=range]::-ms-thumb {
+  box-shadow: none;
+  border: 4px solid #10B382;
+  height: 16px;
+  width: 16px;
+  border-radius: 2px;
+  background: #ffffff;
+  cursor: pointer;
+  height: 4px;
+}
+input.slider[type=range]:focus::-ms-fill-lower {
+  background: transparent;
+}
+input.slider[type=range]:focus::-ms-fill-upper {
+  background: transparent;
+}
+/* End Range Slider */
 ul.invest-list   {
   list-style: none; /* Remove default bullets */
   padding-inline-start: 25px;

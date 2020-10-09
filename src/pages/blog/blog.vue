@@ -36,9 +36,9 @@
               </b-col>
             </b-row>
 
-             <div class="mt-5 w-50 d-flex mx-auto">
+             <!-- <div class="mt-5 w-50 d-flex mx-auto">
             <b-button block variant="outline-success text-center">Lihat Lebih Banyak</b-button>
-          </div>
+          </div> -->
           </div>
         </b-col>
         <b-col md="4 mt-5 mt-md-0">

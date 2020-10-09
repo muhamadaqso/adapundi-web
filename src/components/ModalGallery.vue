@@ -19,9 +19,6 @@
           <h3 class="d-none d-md-block">{{title}}</h3>
           <i @click="$emit('input', false)" ><b-icon scale="2" icon="x"></b-icon></i>
         </div>
-        <div class="col-md-12 mt-4 gallery-header">
-          <h3 >{{title}}</h3>
-        </div>
       </div>
       <div class="row mt-0 mt-md-0" v-if="galleries.length">
         <div class="col-xl-12 d-md-block">

@@ -19,7 +19,7 @@
                     <b-nav-item href="#" class="mx-auto" @click="$router.push({name:'AboutUs'})" :class="{activeNav: $route.name == 'AboutUs'}">Tentang Kami</b-nav-item>
                     <b-nav-item href="#" class="mx-auto" @click="$router.push({name:'Blog'})" :class="{activeNav: $route.name == 'Blog' || $route.name == 'BlogDetail'}">Blog</b-nav-item>
                     <b-nav-item href="#" class="mx-auto" @click="$router.push({name:'Complaints'})" :class="{activeNav: $route.name == 'Complaints'}">Layanan Pengaduan</b-nav-item>
-                    <b-nav-item href="https://www.adapundi.com/#/help" class="mx-auto">FAQ</b-nav-item>
+                    <b-nav-item href="https://www.adapundi.com/#/help" target="_blank" class="mx-auto">FAQ</b-nav-item>
                     <b-nav-item href="#" class="mx-auto"><button class="round btn" type="button" id="buttonTKB">TKB90=98.82%</button></b-nav-item>
                 </b-navbar-nav>
             </b-collapse>

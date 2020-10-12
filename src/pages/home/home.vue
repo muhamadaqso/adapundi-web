@@ -44,12 +44,12 @@
     <h3 class="text-center py-5 f-green">Cara Pengajuan Pinjaman di AdaPundi</h3>
       <b-row>
         <b-col md="7">
-          <div class="show-off">
+          <div class="show-off text-center">
             <transition name="fade"  mode="out-in">
-              <img key="1" v-if="stepActive === 1" src="@/assets/img/how-1.svg" alt="Download App img (your connection down)" class="w-100" style="height: -webkit-fill-available;">
-              <img key="2" v-if="stepActive === 2" src="@/assets/img/how-2.svg" alt="Isi Data img (your connection down)" class="w-100" style="height: -webkit-fill-available;">
-              <img key="3" v-if="stepActive === 3" src="@/assets/img/how-3.svg" alt="Verifikasi img (your connection down)" class="w-100" style="height: -webkit-fill-available;">
-              <img key="4" v-if="stepActive === 4" src="@/assets/img/how-4.svg" alt="Pencairan Dana img (your connection down)" class="w-100" style="height: -webkit-fill-available;">
+              <img key="1" v-if="stepActive === 1" src="@/assets/img/app-1.png" class="w-75" alt="Download App img (your connection down)">
+              <img key="2" v-if="stepActive === 2" src="@/assets/img/app-2.png" class="w-75" alt="Isi Data img (your connection down)">
+              <img key="3" v-if="stepActive === 3" src="@/assets/img/app-3.png" class="w-75" alt="Verifikasi img (your connection down)">
+              <img key="4" v-if="stepActive === 4" src="@/assets/img/app-4.png" class="w-75" alt="Pencairan Dana img (your connection down)">
             </transition>
           </div>
         </b-col>
